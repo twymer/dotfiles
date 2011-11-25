@@ -57,6 +57,7 @@ set smartcase
 
 " Long history
 set history=1000
+set undolevels=1000
 
 " Allow unwritten background buffers
 set hidden
@@ -73,6 +74,17 @@ set hlsearch
 nnoremap <leader><space> :nohlsearch<cr>
 " My way
 nnoremap <CR> :nohlsearch<cr>
+
+" Show trailing whitespace
+set list listchars=tab:»·,trail:·
+" Hide them with leader s
+nmap <silent> <leader>s :set nolist!<CR>
+
+" Always show cursor
+set ruler
+
+" Show matching paren
+set showmatch
 
 " Kill trailing whitespace
 map <Leader>c :%s/\s\+$<cr>
