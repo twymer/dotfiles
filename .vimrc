@@ -24,9 +24,6 @@ if &t_Co > 2 || has("gui_running")
     set guifont=Monaco:h15
 endif
 
-filetype on
-filetype plugin indent on
-
 " Fix console vim colors
 set t_Co=256
 
@@ -41,11 +38,11 @@ set cursorline
 set number
 
 " Tabs settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set autoindent
+augroup filetypes
+    autocmd!
+    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+    autocmd FileType python,c,cpp set sw=4 sts=4 et
+augroup END
 
 " Enable mouse
 set mouse=a
@@ -72,7 +69,10 @@ set incsearch
 " Highlight all search matches
 set hlsearch
 " Now let us clear these annyoing highlights easily
+" EC way
 nnoremap <leader><space> :nohlsearch<cr>
+" My way
+nnoremap <CR> :nohlsearch<cr>
 
 " Kill trailing whitespace
 map <Leader>c :%s/\s\+$<cr>
@@ -90,6 +90,37 @@ nmap gO O<esc>
 " Jump to previous buffer with g-enter
 " (significant whitespace on next line)
 nmap g 
+
+" Better switch split bindings
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+if has("autocmd")
+    " Filetype detection
+    filetype plugin indent on
+
+    " Set textwidth in text files only
+    autocmd FileType text setlocal textwidth=78
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+endif
+
+if has("gui_running")
+    " Hide the toolbar
+    set go-=T
+
+    " Don't show scrollbars
+    set guioptions-=L
+    set guioptions-=r
+endif
 
 " Plugins
 Bundle 'tpope/vim-fugitive'
