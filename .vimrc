@@ -38,6 +38,7 @@ set cursorline
 set number
 
 " Tabs settings
+set sw=2 sts=2 et
 augroup filetypes
     autocmd!
     autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
