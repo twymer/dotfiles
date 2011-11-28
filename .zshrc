@@ -46,6 +46,8 @@ alias redcar='wrapped_redcar'
 # use vim compiled for macvim instead of system
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
+alias start_mysql='/usr/local/Cellar/mysql/5.5.15/bin/mysqld_safe'
+
 # Random project shortcuts
 alias ypgems='rvm use 1.9.2@webyp'
 alias yp='cd ~/code/work/edgecase/webyp/ && ypgems'
