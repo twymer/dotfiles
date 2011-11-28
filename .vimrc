@@ -137,24 +137,25 @@ endif
 
 " Plugins
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat' 
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
 " Repeat actions that were done from plugins
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
 " :Rake
-Bundle 'tpope/vim-rake' 
+Bundle 'tpope/vim-rake'
 " Add 'end' in ruby
-Bundle 'tpope/vim-endwise' 
+Bundle 'tpope/vim-endwise'
 " Text object selection for ruby blocks
-Bundle 'nelstrom/vim-textobj-rubyblock' 
+Bundle 'nelstrom/vim-textobj-rubyblock'
 " Required for rubyblock text objects
 Bundle 'kana/vim-textobj-user'
 " % matching for html and several other languages
-Bundle 'mhz/vim-matchit' 
+Bundle 'mhz/vim-matchit'
 " Easy commenting
-Bundle 'scrooloose/nerdcommenter' 
+Bundle 'scrooloose/nerdcommenter'
 " Colorschemes
-Bundle 'altercation/vim-colors-solarized' 
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'toupeira/vim-desertink'
 
 Bundle 'tpope/vim-markdown'
