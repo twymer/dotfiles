@@ -72,9 +72,9 @@ set incsearch
 set hlsearch
 " Now let us clear these annyoing highlights easily
 " EC way
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader><space> :nohlsearch<CR>
 " My way
-nnoremap <CR> :nohlsearch<cr>
+nnoremap <CR> :nohlsearch<CR><CR>
 
 " Show trailing whitespace
 set list listchars=tab:»·,trail:·
