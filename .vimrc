@@ -136,6 +136,7 @@ if has("gui_running")
 endif
 
 " Plugins
+Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
