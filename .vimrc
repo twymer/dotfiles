@@ -95,6 +95,7 @@ nnoremap Y y$
 
 " Lazy rubyist
 imap <C-l> <Space>=><Space>
+iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger; 0;
 
 " Insert blank lines without going into insert mode
 nmap go o<esc>
