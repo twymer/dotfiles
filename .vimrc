@@ -140,6 +140,8 @@ endif
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
+Bundle 'vim-scripts/ZoomWin'
+  map <Leader>z :ZoomWin<CR>
 Bundle 'tpope/vim-repeat'
 " Repeat actions that were done from plugins
 Bundle 'tpope/vim-cucumber'
@@ -159,6 +161,7 @@ Bundle 'scrooloose/nerdcommenter'
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'toupeira/vim-desertink'
+
 
 Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/nerdtree'
