@@ -13,7 +13,7 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 
 # Unbreak broken, non-colored terminal
-export TERM='xterm-color'
+# export TERM='xterm-color'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
