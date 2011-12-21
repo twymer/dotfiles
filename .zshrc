@@ -1,3 +1,5 @@
+source ~/.zsh/functions/zsh_recompile.zsh
+
 autoload -U compinit promptinit
 setopt promptsubst
 compinit
@@ -28,12 +30,10 @@ export PATH=/Users/twymer/.rvm/gems/macruby-0.10/bin:/Users/twymer/.rvm/gems/mac
 # Kill autocorrect nonsense
 unsetopt correct_all
 
-# **********
-# My things
-# **********
 
-# Alias to link all frameworks in for SFML when compiling
+# Alias to link all frameworks for sdl/sfml
 alias f++='g++ -framework sfml-audio -framework sfml-graphics -framework sfml-network -framework sfml-system -framework sfml-window'
+alias cc-sdl='cc -lSDLmain -lSDL -framework Cocoa'
 
 # alias redcar to the rvm wrapper
 alias redcar='wrapped_redcar'
