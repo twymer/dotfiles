@@ -155,7 +155,7 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 " Required for rubyblock text objects
 Bundle 'kana/vim-textobj-user'
 " % matching for html and several other languages
-Bundle 'mhz/vim-matchit'
+Bundle 'edsono/vim-matchit'
 " Easy commenting
 Bundle 'scrooloose/nerdcommenter'
 " Colorschemes
@@ -194,3 +194,8 @@ Bundle 'mileszs/ack.vim'
     nmap gp :cprev<CR>
     nmap gq :ccl<CR>
     nmap gl :cwindow<CR>
+
+
+" Status line
+:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+:hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
