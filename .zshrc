@@ -33,7 +33,9 @@ unsetopt correct_all
 
 # Alias to link all frameworks for sdl/sfml
 alias f++='g++ -framework sfml-audio -framework sfml-graphics -framework sfml-network -framework sfml-system -framework sfml-window'
-alias cc-sdl='cc -lSDLmain -lSDL -framework Cocoa'
+alias cc-sdl='cc -lSDLmain -lSDL -lSDL_image -framework Cocoa'
+alias cc-opengl-sdl='cc -lSDLmain -lSDL -framework OpenGL -framework Cocoa'
+alias cpp-sdl='g++ -lSDLmain -lSDL -lSDL_image -framework Cocoa'
 
 # alias redcar to the rvm wrapper
 alias redcar='wrapped_redcar'
