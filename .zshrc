@@ -23,7 +23,7 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
 # Customize to your needs...
-export PATH=/Users/twymer/.rvm/gems/macruby-0.10/bin:/Users/twymer/.rvm/gems/macruby-0.10@global/bin:/Users/twymer/.rvm/rubies/macruby-0.10/bin:/Users/twymer/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin
+#export PATH=/Users/twymer/.rvm/gems/macruby-0.10/bin:/Users/twymer/.rvm/gems/macruby-0.10@global/bin:/Users/twymer/.rvm/rubies/macruby-0.10/bin:/Users/twymer/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
@@ -41,7 +41,7 @@ alias cpp-sdl='g++ -lSDLmain -lSDL -lSDL_image -framework Cocoa'
 alias redcar='wrapped_redcar'
 
 # use vim compiled for macvim instead of system
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 alias start_mysql='/usr/local/Cellar/mysql/5.5.15/bin/mysqld_safe'
 
