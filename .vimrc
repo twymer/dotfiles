@@ -137,6 +137,9 @@ if has("gui_running")
 endif
 
 " Plugins
+Bundle 'vim-scripts/VimClojure'
+" Had to do this to get it to auto detect clj files
+au BufNewFile,BufRead *.clj set filetype=clojure
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
@@ -197,5 +200,6 @@ Bundle 'mileszs/ack.vim'
 
 
 " Status line
+:set laststatus=2
 :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 :hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
