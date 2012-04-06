@@ -41,15 +41,12 @@ alias cpp-sdl='g++ -lSDLmain -lSDL -lSDL_image -framework Cocoa'
 alias redcar='wrapped_redcar'
 
 # use vim compiled for macvim instead of system
-#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+# alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 alias start_mysql='/usr/local/Cellar/mysql/5.5.15/bin/mysqld_safe'
 
 # Random project shortcuts
-alias ypgems='rvm use 1.9.2@webyp'
-alias yp='cd ~/code/work/edgecase/webyp/ && ypgems'
+alias teamster='rvm use 1.9.3 && cd ~/code/work/edgecase/teamster/'
 alias ss='script/server'
 alias ssd='script/server --debugging'
-alias buzzgems='rvm use 1.8.7@buzz'
-alias buzz='cd ~/code/work/edgecase/buzz/ && buzzgems'
 
