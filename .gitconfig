@@ -43,6 +43,7 @@
 
 [core]
   excludesfile = /Users/twymer/.gitignore_global
+  editor = /usr/bin/vim
 
 [git-pair]
   authors = Aaron Christy <aaron@edgecase.com>
