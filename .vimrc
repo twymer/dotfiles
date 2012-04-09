@@ -31,8 +31,8 @@ set background=dark
 colorscheme desertink
 
 " Cursor crosshairs!
-"set cursorcolumn
-"set cursorline
+set cursorcolumn
+set cursorline
 
 " Always show line numbers
 set number

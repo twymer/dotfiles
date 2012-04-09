@@ -266,14 +266,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   " setting a background color for the cursor line can hide
   " other background colors such as Error and ErrorMsg
-	"call <SID>X("CursorLine", "", "333333", "", "", "235", "none")
-  "call <SID>X("CursorColumn", "", "333333", "", "", "235")
+  call <SID>X("CursorLine", "", "2a2a2a", "", "", "235", "none")
+  call <SID>X("CursorColumn", "", "2a2a2a", "", "", "235")
 
   " use only bold for the cursorline to avoid covering the background
-  highlight clear CursorLine
-  highlight clear CursorColumn
-  highlight CursorLine cterm=bold gui=bold
-  highlight CursorColumn cterm=bold gui=bold
+  "highlight clear CursorLine
+  "highlight clear CursorColumn
+  "highlight CursorLine cterm=bold gui=bold
+  "highlight CursorColumn cterm=bold gui=bold
 
   call <SID>X("ColorColumn", "", "333333", "", "")
 
@@ -301,8 +301,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X("SpecialKey", "9acd32", "", "")
 
   call <SID>X("Title", "cd5c5c", "", "")
-  call <SID>X("Visual", "ffffff", "2e5e73", "bold")
-  call <SID>X("VisualNOS", "cccccc", "2e5e73", "underline")
+  call <SID>X("Visual", "", "2e5e73", "bold")
+  call <SID>X("VisualNOS", "", "254A59", "bold")
   call <SID>X("WarningMsg", "fa8072", "", "")
   call <SID>X("MatchParen", "", "606060", "bold")
 
