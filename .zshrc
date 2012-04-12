@@ -14,8 +14,10 @@ setopt hist_ignore_dups
 # Prevent record in history entry if preceding them with at least one space
 setopt hist_ignore_space
 
-# Unbreak broken, non-colored terminal
-# export TERM='xterm-color'
+# Fix terminal coloring
+# alias tmux="tmux -2"
+alias tmux="TERM=screen-256color-bce tmux"
+
 alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
