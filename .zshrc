@@ -49,6 +49,7 @@ alias start_mysql='/usr/local/Cellar/mysql/5.5.15/bin/mysqld_safe'
 
 # Random project shortcuts
 alias teamster='rvm use 1.9.3 && cd ~/code/work/edgecase/teamster/'
+alias site='rvm use 1.9.3@blog && cd ~/code/personal-site'
 alias ss='script/server'
 alias ssd='script/server --debugging'
 
