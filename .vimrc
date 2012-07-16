@@ -14,8 +14,6 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
@@ -41,7 +39,7 @@ set number
 set sw=2 sts=2 et
 augroup filetypes
     autocmd!
-    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,slim set ai sw=4 sts=2 et
     autocmd FileType python,c,cpp set sw=4 sts=4 et
 augroup END
 
@@ -138,8 +136,9 @@ endif
 
 " Plugins
 Bundle 'vim-scripts/VimClojure'
-" Had to do this to get it to auto detect clj files
 au BufNewFile,BufRead *.clj set filetype=clojure
+Bundle 'bbommarito/vim-slim'
+au BufNewFile,BufRead *.slim set filetype=slim
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
