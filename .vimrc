@@ -39,7 +39,7 @@ set number
 set sw=2 sts=2 et
 augroup filetypes
     autocmd!
-    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,slim set ai sw=4 sts=2 et
+    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,slim set ai sw=2 sts=2 et
     autocmd FileType python,c,cpp set sw=4 sts=4 et
 augroup END
 
