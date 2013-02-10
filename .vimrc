@@ -185,7 +185,8 @@ Bundle 'godlygeek/tabular'
 
     autocmd VimEnter * call CustomTabularPatterns()
 
-Bundle 'wincent/Command-T'
+" Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 
 " ACK
 Bundle 'mileszs/ack.vim'
