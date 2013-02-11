@@ -100,8 +100,7 @@ nmap go o<esc>
 nmap gO O<esc>
 
 " Jump to previous buffer with g-enter
-" (significant whitespace on next line)
-nmap g 
+nmap g<CR> <C-^>
 
 " Better switch split bindings
 nnoremap <c-j> <c-w>j
