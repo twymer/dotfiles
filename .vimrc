@@ -137,8 +137,8 @@ endif
 " Plugins
 Bundle 'vim-scripts/VimClojure'
 au BufNewFile,BufRead *.clj set filetype=clojure
-Bundle 'bbommarito/vim-slim'
-au BufNewFile,BufRead *.slim set filetype=slim
+" Bundle 'bbommarito/vim-slim'
+" au BufNewFile,BufRead *.slim set filetype=slim
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
