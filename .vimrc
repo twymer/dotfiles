@@ -40,7 +40,7 @@ set sw=2 sts=2 et
 augroup filetypes
     autocmd!
     autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,slim set ai sw=2 sts=2 et
-    autocmd FileType python,c,cpp set sw=4 sts=4 et
+    autocmd FileType python,c,cpp,tex set sw=4 sts=4 et
 augroup END
 
 " Enable mouse
