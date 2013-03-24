@@ -167,6 +167,7 @@ Bundle 'toupeira/vim-desertink'
 Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/nerdtree'
 let NERDTreeHijackNetrw = 0
+let NERDTreeIgnore = ['\.pyc$']
 nmap gt :NERDTreeToggle<CR>
 
 Bundle 'godlygeek/tabular'
