@@ -4,6 +4,9 @@
 --type-add=css=.sass,.less,.scss
 --type-set=cucumber=.feature
 
+--type-set=PDF=.pdf
+--noPDF
+
 --ignore-dir=coverage
 --ignore-dir=doc
 --ignore-dir=fixtures
@@ -15,8 +18,10 @@
 --ignore-dir=images
 --ignore-dir=build
 --ignore-dir=venv
-
 --ignore-dir=dependencies
+
+# core-hq
+--ignore-dir=test-data
 
 --color
 --follow
