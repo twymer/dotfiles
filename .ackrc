@@ -22,6 +22,8 @@
 
 # core-hq
 --ignore-dir=test-data
+--type-set=djangolog=.django.log
+--nodjangolog
 
 --color
 --follow
