@@ -32,6 +32,9 @@ colorscheme desertink
 set cursorcolumn
 set cursorline
 
+" Friends don't let friends write long code lines
+set colorcolumn=80
+
 " Always show line numbers
 set number
 
