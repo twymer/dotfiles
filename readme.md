@@ -16,3 +16,13 @@ The install script assumes you have the dotfiles folder in your home directory. 
 If you only want to use some of the files, then manually symlink them. An example:
 
     ln -s ~/dotfiles/.vimrc ~/.vimrc
+
+Misc setup files
+----------------
+
+In addition to the standard dotfiles I also have some setup files that (sort of) help manage my setup process on both Ubuntu and OSX. These can be found in the `bin/` folder.
+
+The two most important ones being:
+
+    dotfiles/bin/brew-commands.sh
+    dotfiles/bin/ubuntu-commands.sh
