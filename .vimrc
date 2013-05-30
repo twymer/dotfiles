@@ -100,6 +100,8 @@ iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval
 
 " Lazy pythonista
 iabbrev ppdb import pdb; pdb.set_trace()
+iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
+
 
 " Insert blank lines without going into insert mode
 nmap go o<esc>
