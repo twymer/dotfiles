@@ -2,7 +2,6 @@
 " https://github.com/edgecase/vim-config/
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 
-
 " Kill compatibility
 set nocompatible
 
@@ -97,11 +96,9 @@ nnoremap Y y$
 " Lazy rubyist
 imap <C-l> <Space>=><Space>
 iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger; 0;
-
 " Lazy pythonista
 iabbrev ppdb import pdb; pdb.set_trace()
 iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
-
 
 " Insert blank lines without going into insert mode
 nmap go o<esc>
@@ -171,7 +168,6 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'toupeira/vim-desertink'
 
-
 Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/nerdtree'
 let NERDTreeHijackNetrw = 0
@@ -193,7 +189,6 @@ Bundle 'godlygeek/tabular'
 
     autocmd VimEnter * call CustomTabularPatterns()
 
-" Bundle 'wincent/Command-T'
 Bundle 'kien/ctrlp.vim'
 
 " ACK
@@ -205,7 +200,6 @@ Bundle 'mileszs/ack.vim'
     nmap gp :cprev<CR>
     nmap gq :ccl<CR>
     nmap gl :cwindow<CR>
-
 
 " Status line
 :set laststatus=2
