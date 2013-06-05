@@ -24,14 +24,17 @@ alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
-# Customize to your needs...
-#export PATH=/Users/twymer/.rvm/gems/macruby-0.10/bin:/Users/twymer/.rvm/gems/macruby-0.10@global/bin:/Users/twymer/.rvm/rubies/macruby-0.10/bin:/Users/twymer/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
+# Set editor mode for tmuxinator
+export EDITOR=vim
+# But setting editor to vim triggers vi-mode which kills the
+# ctrl-r shortcut so fix that up
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
 
 # Kill autocorrect nonsense
 unsetopt correct_all
-
 
 # Alias to link all frameworks for sdl/sfml
 alias f++='g++ -framework sfml-audio -framework sfml-graphics -framework sfml-network -framework sfml-system -framework sfml-window'
@@ -47,8 +50,8 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 alias start_mysql='/usr/local/Cellar/mysql/5.5.25/bin/mysqld_safe'
 
-# Random project shortcuts
-alias site='rvm use 1.9.3@blog && cd ~/code/personal-site'
+# Random project related shortcuts
 alias ss='script/server'
 alias ssd='script/server --debugging'
-
+alias sourcehq='source ~/.virtualenvs/commcare-hq/bin/activate'
+alias hq='cd ~/code/dimagi/commcare-hq && sourcehq'
