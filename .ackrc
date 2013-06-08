@@ -22,8 +22,18 @@
 
 # core-hq
 --ignore-dir=test-data
+--ignore-dir=pillows
+--ignore-dir=app_builder_live_test
 --type-set=djangolog=.django.log
 --nodjangolog
+
+# ignore minified files
+--ignore-file=match:/[.-]min\.js$/
+--ignore-file=match:/[.-]min\.css$/
+
+# ignore anything with >200 char first line in an attempt
+# to catch any minified files without a proper filename
+--ignore-file=firstlinematch:/.{200}/
 
 --color
 --follow
