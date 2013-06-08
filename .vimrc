@@ -178,6 +178,10 @@ nmap gt :NERDTreeToggle<CR>
 " installed such as flake8 for Python
 Bundle 'scrooloose/syntastic'
 
+" Buffer exploring madness
+Bundle 'vim-scripts/bufexplorer.zip'
+noremap <leader>e :BufExplorerHorizontalSplit<CR>
+
 Bundle 'godlygeek/tabular'
     function! CustomTabularPatterns()
         if exists('g:tabular_loaded')
