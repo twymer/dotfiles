@@ -174,6 +174,10 @@ let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore = ['\.pyc$']
 nmap gt :NERDTreeToggle<CR>
 
+" Syntax checking.. this requires associated syntax checkers to be
+" installed such as flake8 for Python
+Bundle 'scrooloose/syntastic'
+
 Bundle 'godlygeek/tabular'
     function! CustomTabularPatterns()
         if exists('g:tabular_loaded')
