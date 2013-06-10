@@ -178,6 +178,12 @@ nmap gt :NERDTreeToggle<CR>
 " installed such as flake8 for Python
 Bundle 'scrooloose/syntastic'
 
+Bundle 'davidoc/taskpaper.vim'
+augroup taskpaper
+  au! BufRead,BufNewFile *.taskpaper set filetype=taskpaper
+  au FileType taskpaper setlocal noexpandtab shiftwidth=4 tabstop=4 nolist!
+augroup END
+
 " Buffer exploring madness
 Bundle 'vim-scripts/bufexplorer.zip'
 noremap <leader>e :BufExplorerHorizontalSplit<CR>
