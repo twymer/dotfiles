@@ -205,6 +205,10 @@ Bundle 'godlygeek/tabular'
 
 Bundle 'kien/ctrlp.vim'
 
+" Undo tree
+Bundle "git://github.com/sjl/gundo.vim.git"
+map <Leader>h :GundoToggle<CR>
+
 " ACK
 Bundle 'mileszs/ack.vim'
     nmap g/ :Ack!<space>
