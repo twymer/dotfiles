@@ -76,6 +76,9 @@ nnoremap <leader><space> :nohlsearch<CR>
 " My way
 nnoremap <CR> :nohlsearch<CR><CR>
 
+" Select last paste
+nnoremap vv `[V`]
+
 " Show trailing whitespace
 set list listchars=tab:»·,trail:·
 " Hide them with leader s
@@ -106,6 +109,9 @@ nmap gO O<esc>
 
 " Jump to previous buffer with g-enter
 nmap g<CR> <C-^>
+
+" delete all buffers
+map <Leader>d :bufdo bd<cr>
 
 " Better switch split bindings
 nnoremap <c-j> <c-w>j
