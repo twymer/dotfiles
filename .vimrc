@@ -210,6 +210,9 @@ Bundle 'godlygeek/tabular'
     autocmd VimEnter * call CustomTabularPatterns()
 
 Bundle 'kien/ctrlp.vim'
+map <leader>p :let g:ctrlp_working_path_mode = 'a'<cr>
+map <leader>P :let g:ctrlp_working_path_mode = 'ra'<cr>
+
 
 " Undo tree
 Bundle "git://github.com/sjl/gundo.vim.git"
