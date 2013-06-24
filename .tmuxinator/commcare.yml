@@ -1,9 +1,7 @@
 # ~/.tmuxinator/commcare.yml
 project_name: commcare
 project_root: ~/code/dimagi/commcare-hq
-pre: sourcehq &&
-     pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start &&
-     elasticsearch
+pre: pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 tabs:
   - work: sourcehq && vim
   - server: sourcehq && ./manage.py runserver
