@@ -27,10 +27,6 @@ set t_Co=256
 set background=dark
 colorscheme desertink
 
-" Cursor crosshairs!
-set cursorcolumn
-set cursorline
-
 " Friends don't let friends write long code lines
 set colorcolumn=80
 
