@@ -6,6 +6,8 @@
 
 --type-set=PDF=.pdf
 --noPDF
+--type-set=pyc=.pyc
+--nopyc
 
 --ignore-dir=coverage
 --ignore-dir=doc
