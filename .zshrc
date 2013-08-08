@@ -26,6 +26,8 @@ export GREP_OPTIONS="--color"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Set editor mode for tmuxinator
 export EDITOR=vim
 # But setting editor to vim triggers vi-mode which kills the
