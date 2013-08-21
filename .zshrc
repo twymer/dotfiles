@@ -44,13 +44,8 @@ alias cc-sdl='cc -lSDLmain -lSDL -lSDL_image -framework Cocoa'
 alias cc-opengl-sdl='cc -lSDLmain -lSDL -framework OpenGL -framework Cocoa'
 alias cpp-sdl='g++ -lSDLmain -lSDL -lSDL_image -framework Cocoa'
 
-# alias redcar to the rvm wrapper
-alias redcar='wrapped_redcar'
-
 # use vim compiled for macvim instead of system
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-
-alias start_mysql='/usr/local/Cellar/mysql/5.5.25/bin/mysqld_safe'
 
 # Random project related shortcuts
 alias ss='script/server'
