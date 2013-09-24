@@ -96,7 +96,7 @@ nnoremap Y y$
 imap <C-l> <Space>=><Space>
 iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger; 0;
 " Lazy pythonista
-iabbrev ppdb import pdb; pdb.set_trace()
+iabbrev ppdb import bpdb; bpdb.set_trace()
 iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
 
 " Insert blank lines without going into insert mode
