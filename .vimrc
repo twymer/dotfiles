@@ -171,9 +171,9 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'toupeira/vim-desertink'
 " Jedi for easy jumping
 Bundle 'davidhalter/jedi-vim'
-"let g:jedi#show_function_definition = 0
+let g:jedi#show_function_definition = 0
 let g:jedi#popup_on_dot = 0
-"let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 0
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#goto_command = "<leader>l"
 let g:jedi#get_definition_command = "<leader>d"
