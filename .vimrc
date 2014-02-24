@@ -218,8 +218,15 @@ Bundle 'godlygeek/tabular'
     autocmd VimEnter * call CustomTabularPatterns()
 
 Bundle 'kien/ctrlp.vim'
+nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
+nnoremap <Leader>t :<C-U>CtrlP<CR>
+nnoremap <Leader>T :<C-U>CtrlPTag<CR>
+" Toggle working path mode (important for submodules)
 map <leader>p :let g:ctrlp_working_path_mode = 'a'<cr>
 map <leader>P :let g:ctrlp_working_path_mode = 'ra'<cr>
+" Respect the .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+
 
 
 " Undo tree
@@ -235,6 +242,17 @@ Bundle 'mileszs/ack.vim'
     nmap gp :cprev<CR>
     nmap gq :ccl<CR>
     nmap gl :cwindow<CR>
+
+Bundle 'alfredodeza/coveragepy.vim'
+
+" Auto-detect indentation
+Bundle 'tpope/vim-sleuth'
+
+" Tagbar for navigation by tags using CTags
+Bundle "git://github.com/majutsushi/tagbar.git"
+let g:tagbar_autofocus = 1
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <Leader>. :TagbarToggle<CR>
 
 " Status line
 :set laststatus=2

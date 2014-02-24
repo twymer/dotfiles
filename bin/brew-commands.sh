@@ -5,3 +5,4 @@ brew install zsh
 brew install tmux
 brew install ack
 brew install wget
+brew install ctags
