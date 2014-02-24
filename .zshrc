@@ -47,10 +47,13 @@ alias cpp-sdl='g++ -lSDLmain -lSDL -lSDL_image -framework Cocoa'
 # use vim compiled for macvim instead of system
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
+# use exhuberant ctags properly
+export PATH="/usr/local/bin:$PATH"
+
 # Random project related shortcuts
 alias ss='script/server'
 alias ssd='script/server --debugging'
-alias sourcehq='source ~/.virtualenvs/commcare-hq/bin/activate'
+alias sourcehq='workon hq_env15'
 alias hq='cd ~/code/dimagi/commcare-hq && sourcehq'
 alias flipit='python manage.py ptop_es_manage --flip_all_aliases'
 alias fluffit='./manage.py syncdb && ./manage.py reset_pillowtop_checkpoints && ./manage.py run_ptop'
