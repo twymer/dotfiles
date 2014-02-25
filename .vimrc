@@ -107,7 +107,7 @@ nmap gO O<esc>
 nmap g<CR> <C-^>
 
 " delete all buffers
-map <Leader>d :bufdo bd<cr>
+map <leader>B :bufdo bd<cr>
 
 " Better switch split bindings
 nnoremap <c-j> <c-w>j
