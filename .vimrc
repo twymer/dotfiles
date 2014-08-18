@@ -182,11 +182,11 @@ let g:jedi#related_names_command = "<leader>jn"
 
 Bundle 'tpope/vim-markdown'
 
+Bundle 'tpope/vim-vinegar'
 Bundle 'scrooloose/nerdtree'
-let NERDTreeHijackNetrw = 0
+" let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore = ['\.pyc$']
 nmap gt :NERDTreeToggle<CR>
-Bundle 'tpope/vim-vinegar'
 
 " Syntax checking.. this requires associated syntax checkers to be
 " installed such as flake8 for Python
