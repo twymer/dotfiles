@@ -39,7 +39,8 @@ alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+eval "$(rbenv init -)"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -77,3 +78,13 @@ alias fluffit='./manage.py syncdb && ./manage.py reset_pillowtop_checkpoints && 
 alias pip='ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip'
 
 source ~/dotfiles/bin/update-code.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+alias b="bundle"
+alias bi="b install --path vendor"
+alias bil="bi --local"
+alias bu="b update"
+alias be="b exec"
+alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
