@@ -141,6 +141,12 @@ if has("gui_running")
 endif
 
 " Plugins
+
+" Handlebars, Mustache, and Friends
+Bundle 'mustache/vim-mustache-handlebars'
+au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hb set filetype=mustache syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
+
+
 Bundle 'vim-scripts/VimClojure'
 au BufNewFile,BufRead *.clj set filetype=clojure
 " Bundle 'bbommarito/vim-slim'
@@ -179,6 +185,10 @@ let g:jedi#goto_command = "<leader>l"
 let g:jedi#get_definition_command = "<leader>d"
 let g:jedi#rename_command = "<leader>jr"
 let g:jedi#related_names_command = "<leader>jn"
+
+Bundle 'kchmck/vim-coffee-script'
+au! BufRead,BufNewFile *.coffee set filetype=coffee
+
 
 Bundle 'tpope/vim-markdown'
 
