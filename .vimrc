@@ -67,10 +67,7 @@ set incsearch
 " Highlight all search matches
 set hlsearch
 " Now let us clear these annyoing highlights easily
-" EC way
 nnoremap <leader><space> :nohlsearch<CR>
-" My way
-nnoremap <CR> :nohlsearch<CR><CR>
 
 " Select last paste
 nnoremap vv `[V`]
