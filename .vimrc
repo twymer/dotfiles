@@ -241,15 +241,17 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 Bundle "git://github.com/sjl/gundo.vim.git"
 map <Leader>h :GundoToggle<CR>
 
-" ACK
+" AG aka The Silver Searcher
+Bundle 'git://github.com/rking/ag.vim.git'
+nmap g/ :Ag!<space>
+nmap g* :Ag! -w <C-R><C-W><space>
+nmap ga :AgAdd!<space>
+nmap gn :cnext<CR>
+nmap gp :cprev<CR>
+nmap gq :ccl<CR>
+nmap gl :cwindow<CR>
+" Install ack as well due to --type being helpful
 Bundle 'mileszs/ack.vim'
-    nmap g/ :Ack!<space>
-    nmap g* :Ack! -w <C-R><C-W><space>
-    nmap ga :AckAdd!<space>
-    nmap gn :cnext<CR>
-    nmap gp :cprev<CR>
-    nmap gq :ccl<CR>
-    nmap gl :cwindow<CR>
 
 Bundle 'alfredodeza/coveragepy.vim'
 
