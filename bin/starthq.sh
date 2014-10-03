@@ -37,7 +37,7 @@
         set name to "ptop"
         write text cdhqdir
         write text "sourcehq"
-        write text "./manage.py run_ptop --all"
+        # write text "./manage.py run_ptop --all"
       end tell
 
       launch session "Default session"
