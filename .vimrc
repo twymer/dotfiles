@@ -13,6 +13,9 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+" Fix console vim colors
+set t_Co=256
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
@@ -20,9 +23,6 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch
     set guifont=Monaco:h15
 endif
-
-" Fix console vim colors
-set t_Co=256
 
 set background=dark
 colorscheme desertink
