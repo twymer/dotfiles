@@ -2,6 +2,9 @@
 " https://github.com/edgecase/vim-config/
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 
+"""""""""""""""""""""""""""""""""""""""
+" General setup
+"""""""""""""""""""""""""""""""""""""""
 " Kill compatibility
 set nocompatible
 
@@ -13,6 +16,8 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+colorscheme desertink
+set background=dark
 " Fix console vim colors
 set t_Co=256
 
@@ -24,10 +29,12 @@ if &t_Co > 2 || has("gui_running")
     set guifont=Monaco:h15
 endif
 
-set background=dark
-colorscheme desertink
+" Status line
+:set laststatus=2
+:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+:hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
-" Friends don't let friends write long code lines
+" Highlight column 80
 set colorcolumn=80
 
 " Always show line numbers
@@ -66,22 +73,53 @@ map Q gq
 set incsearch
 " Highlight all search matches
 set hlsearch
-" Now let us clear these annyoing highlights easily
-nnoremap <leader><space> :nohlsearch<CR>
-
-" Select last paste
-nnoremap vv `[V`]
 
 " Show trailing whitespace
 set list listchars=tab:»·,trail:·
-" Hide them with leader s
-nmap <silent> <leader>s :set nolist!<CR>
-
+"
 " Always show cursor
 set ruler
 
 " Show matching paren
 set showmatch
+
+if has("autocmd")
+  " Filetype detection
+  filetype plugin indent on
+
+  " Set textwidth in text files only
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
+endif
+
+if has("gui_running")
+  " Hide the toolbar
+  set go-=T
+
+  " Don't show scrollbars
+  set guioptions-=L
+  set guioptions-=r
+endif
+
+
+"""""""""""""""""""""""""""""""""""""""
+" General key mappings
+"""""""""""""""""""""""""""""""""""""""
+" Clear highlight searches
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Select last paste or modified set of lines
+nnoremap vv `[V`]
+
+" Hide trailing whitespace annotations
+nmap <silent> <leader>s :set nolist!<CR>
 
 " Kill trailing whitespace
 map <Leader>c :%s/\s\+$<cr>
@@ -89,13 +127,8 @@ map <Leader>c :%s/\s\+$<cr>
 " Make Y consistent with C and D
 nnoremap Y y$
 
-" Lazy rubyist
+" Hash rocket insertion
 imap <C-l> <Space>=><Space>
-iabbrev ppry require 'pry'; binding.pry
-iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger; 0;
-" Lazy pythonista
-iabbrev ppdb import ipdb; ipdb.set_trace()
-iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
 
 " Insert blank lines without going into insert mode
 nmap go o<esc>
@@ -113,107 +146,92 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-if has("autocmd")
-    " Filetype detection
-    filetype plugin indent on
+"""""""""""""""""""""""""""""""""""""""
+" Text expands
+"""""""""""""""""""""""""""""""""""""""
+" Lazy rubyist
+iabbrev ppry require 'pry'; binding.pry
+iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger; 0;
 
-    " Set textwidth in text files only
-    autocmd FileType text setlocal textwidth=78
+" Lazy pythonista
+iabbrev ppdb import ipdb; ipdb.set_trace()
+iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
-endif
-
-if has("gui_running")
-    " Hide the toolbar
-    set go-=T
-
-    " Don't show scrollbars
-    set guioptions-=L
-    set guioptions-=r
-endif
-
-" Plugins
-
+"""""""""""""""""""""""""""""""""""""""
+" Plugins and their setup
+"""""""""""""""""""""""""""""""""""""""
 " Handlebars, Mustache, and Friends
 Bundle 'mustache/vim-mustache-handlebars'
 au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hb set filetype=mustache syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
 
+" Coffee
+Bundle 'kchmck/vim-coffee-script'
+au! BufRead,BufNewFile *.coffee set filetype=coffee
 
+" Clojure
 Bundle 'vim-scripts/VimClojure'
 au BufNewFile,BufRead *.clj set filetype=clojure
-" Bundle 'bbommarito/vim-slim'
-" au BufNewFile,BufRead *.slim set filetype=slim
+
+" The tpope shrine
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
-Bundle 'vim-scripts/ZoomWin'
-  map <Leader>z :ZoomWin<CR>
 Bundle 'tpope/vim-repeat'
-" Repeat actions that were done from plugins
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
-" :Rake
 Bundle 'tpope/vim-rake'
-" Add 'end' in ruby
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-sleuth'
+
+" ZoomWin to temporarily maximize a split
+Bundle 'vim-scripts/ZoomWin'
+map <Leader>z :ZoomWin<CR>
+
 " Text object selection for ruby blocks
 Bundle 'nelstrom/vim-textobj-rubyblock'
 " Required for rubyblock text objects
 Bundle 'kana/vim-textobj-user'
+
 " % matching for html and several other languages
 Bundle 'edsono/vim-matchit'
+
 " Easy commenting
 Bundle 'scrooloose/nerdcommenter'
+
 " Colorschemes
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'toupeira/vim-desertink'
+Bundle 'altercation/vim-colors-solarized'
 
-Bundle 'kchmck/vim-coffee-script'
-au! BufRead,BufNewFile *.coffee set filetype=coffee
-
-
-Bundle 'tpope/vim-markdown'
-
-Bundle 'tpope/vim-vinegar'
 Bundle 'scrooloose/nerdtree'
 " let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore = ['\.pyc$']
-nmap gt :NERDTreeToggle<CR>
+" nmap gt :NERDTreeToggle<CR>
 
-" Syntax checking.. this requires associated syntax checkers to be
-" installed such as flake8 for Python
+" Syntax checking
+" This requires associated syntax checkers to be
+" installed (such as flake8 for Python)
 Bundle 'scrooloose/syntastic'
 
-Bundle 'davidoc/taskpaper.vim'
-augroup taskpaper
-  au! BufRead,BufNewFile *.taskpaper set filetype=taskpaper
-  au FileType taskpaper setlocal noexpandtab shiftwidth=4 tabstop=4 nolist!
-augroup END
-
-" Buffer exploring madness
+" Buffer exploring
 Bundle 'vim-scripts/bufexplorer.zip'
 noremap <leader>e :BufExplorerHorizontalSplit<CR>
 
+" Install tabular and set up common tabulated shortcuts
 Bundle 'godlygeek/tabular'
-    function! CustomTabularPatterns()
-        if exists('g:tabular_loaded')
-            AddTabularPattern! symbols         / :/l0
-            AddTabularPattern! hash            /^[^>]*\zs=>/
-            AddTabularPattern! chunks          / \S\+/l0
-            AddTabularPattern! assignment      / = /l0
-            AddTabularPattern! comma           /^[^,]*,/l1
-            AddTabularPattern! colon           /:\zs /l0
-            AddTabularPattern! options_hashes  /:\w\+ =>/
-        endif
-    endfunction
-
-    autocmd VimEnter * call CustomTabularPatterns()
+function! CustomTabularPatterns()
+    if exists('g:tabular_loaded')
+        AddTabularPattern! symbols         / :/l0
+        AddTabularPattern! hash            /^[^>]*\zs=>/
+        AddTabularPattern! chunks          / \S\+/l0
+        AddTabularPattern! assignment      / = /l0
+        AddTabularPattern! comma           /^[^,]*,/l1
+        AddTabularPattern! colon           /:\zs /l0
+        AddTabularPattern! options_hashes  /:\w\+ =>/
+    endif
+endfunction
+autocmd VimEnter * call CustomTabularPatterns()
 
 Bundle 'kien/ctrlp.vim'
 nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
@@ -225,13 +243,11 @@ map <leader>P :let g:ctrlp_working_path_mode = 'ra'<cr>
 " Respect the .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
-
-
 " Undo tree
 Bundle "git://github.com/sjl/gundo.vim.git"
 map <Leader>h :GundoToggle<CR>
 
-" AG aka The Silver Searcher
+" AG for search
 Bundle 'git://github.com/rking/ag.vim.git'
 nmap g/ :Ag!<space>
 nmap g* :Ag! -w <C-R><C-W><space>
@@ -243,18 +259,11 @@ nmap gl :cwindow<CR>
 " Install ack as well due to --type being helpful
 Bundle 'mileszs/ack.vim'
 
+" Parse coverage reports
 Bundle 'alfredodeza/coveragepy.vim'
-
-" Auto-detect indentation
-Bundle 'tpope/vim-sleuth'
 
 " Tagbar for navigation by tags using CTags
 Bundle "git://github.com/majutsushi/tagbar.git"
 let g:tagbar_autofocus = 1
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <Leader>. :TagbarToggle<CR>
-
-" Status line
-:set laststatus=2
-:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-:hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
