@@ -242,6 +242,9 @@ map <leader>. :TagbarToggle<CR>
 " Parse coverage reports
 Bundle 'alfredodeza/coveragepy.vim'
 
+" Python indenter
+Bundle 'hynek/vim-python-pep8-indent'
+
 " Install tabular and set up common tabulated shortcuts
 Bundle 'godlygeek/tabular'
 function! CustomTabularPatterns()
