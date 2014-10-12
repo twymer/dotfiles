@@ -169,10 +169,6 @@ au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hb set filetype=mustache s
 Bundle 'kchmck/vim-coffee-script'
 au! BufRead,BufNewFile *.coffee set filetype=coffee
 
-" Clojure
-Bundle 'vim-scripts/VimClojure'
-au BufNewFile,BufRead *.clj set filetype=clojure
-
 " The tpope shrine
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
@@ -195,18 +191,12 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 " Required for rubyblock text objects
 Bundle 'kana/vim-textobj-user'
 
-" % matching for html and several other languages
-Bundle 'edsono/vim-matchit'
-
 " Colorschemes
 Bundle 'toupeira/vim-desertink'
 Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'scrooloose/nerdtree'
 let NERDTreeIgnore = ['\.pyc$']
-
-" Easy commenting
-Bundle 'scrooloose/nerdcommenter'
 
 " Syntax checking
 " This requires associated syntax checkers to be
@@ -216,21 +206,6 @@ Bundle 'scrooloose/syntastic'
 " Buffer exploring
 Bundle 'vim-scripts/bufexplorer.zip'
 noremap <leader>e :BufExplorerHorizontalSplit<CR>
-
-" Install tabular and set up common tabulated shortcuts
-Bundle 'godlygeek/tabular'
-function! CustomTabularPatterns()
-    if exists('g:tabular_loaded')
-        AddTabularPattern! symbols         / :/l0
-        AddTabularPattern! hash            /^[^>]*\zs=>/
-        AddTabularPattern! chunks          / \S\+/l0
-        AddTabularPattern! assignment      / = /l0
-        AddTabularPattern! comma           /^[^,]*,/l1
-        AddTabularPattern! colon           /:\zs /l0
-        AddTabularPattern! options_hashes  /:\w\+ =>/
-    endif
-endfunction
-autocmd VimEnter * call CustomTabularPatterns()
 
 Bundle 'kien/ctrlp.vim'
 nnoremap <leader>b :<C-U>CtrlPBuffer<CR>
@@ -258,11 +233,36 @@ nmap gl :cwindow<CR>
 " Install ack as well due to --type being helpful
 Bundle 'mileszs/ack.vim'
 
-" Parse coverage reports
-Bundle 'alfredodeza/coveragepy.vim'
-
 " Tagbar for navigation by tags using CTags
 Bundle "git://github.com/majutsushi/tagbar.git"
 let g:tagbar_autofocus = 1
 map <leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <leader>. :TagbarToggle<CR>
+
+" Parse coverage reports
+Bundle 'alfredodeza/coveragepy.vim'
+
+" Install tabular and set up common tabulated shortcuts
+Bundle 'godlygeek/tabular'
+function! CustomTabularPatterns()
+    if exists('g:tabular_loaded')
+        AddTabularPattern! symbols         / :/l0
+        AddTabularPattern! hash            /^[^>]*\zs=>/
+        AddTabularPattern! chunks          / \S\+/l0
+        AddTabularPattern! assignment      / = /l0
+        AddTabularPattern! comma           /^[^,]*,/l1
+        AddTabularPattern! colon           /:\zs /l0
+        AddTabularPattern! options_hashes  /:\w\+ =>/
+    endif
+endfunction
+autocmd VimEnter * call CustomTabularPatterns()
+
+" Easy commenting
+Bundle 'scrooloose/nerdcommenter'
+
+" % matching for html and several other languages
+Bundle 'edsono/vim-matchit'
+
+" Clojure
+Bundle 'vim-scripts/VimClojure'
+au BufNewFile,BufRead *.clj set filetype=clojure
