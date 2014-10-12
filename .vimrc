@@ -168,7 +168,7 @@ au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hb set filetype=mustache s
 Bundle 'kchmck/vim-coffee-script'
 au! BufRead,BufNewFile *.coffee set filetype=coffee
 
-" The tpope shrine
+" <3 Tim Pope <3
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
