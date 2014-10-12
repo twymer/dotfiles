@@ -122,7 +122,7 @@ nnoremap vv `[V`]
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Kill trailing whitespace
-map <Leader>c :%s/\s\+$<cr>
+map <leader>c :%s/\s\+$<cr>
 
 " Make Y consistent with C and D
 nnoremap Y y$
@@ -187,7 +187,7 @@ Bundle 'tpope/vim-sleuth'
 
 " ZoomWin to temporarily maximize a split
 Bundle 'vim-scripts/ZoomWin'
-map <Leader>z :ZoomWin<CR>
+map <leader>z :ZoomWin<CR>
 
 " Text object selection for ruby blocks
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -234,9 +234,9 @@ endfunction
 autocmd VimEnter * call CustomTabularPatterns()
 
 Bundle 'kien/ctrlp.vim'
-nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
-nnoremap <Leader>t :<C-U>CtrlP<CR>
-nnoremap <Leader>T :<C-U>CtrlPTag<CR>
+nnoremap <leader>b :<C-U>CtrlPBuffer<CR>
+nnoremap <leader>t :<C-U>CtrlP<CR>
+nnoremap <leader>T :<C-U>CtrlPTag<CR>
 " Toggle working path mode (important for submodules)
 map <leader>p :let g:ctrlp_working_path_mode = 'a'<cr>
 map <leader>P :let g:ctrlp_working_path_mode = 'ra'<cr>
@@ -245,7 +245,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 
 " Undo tree
 Bundle "git://github.com/sjl/gundo.vim.git"
-map <Leader>h :GundoToggle<CR>
+map <leader>h :GundoToggle<CR>
 
 " AG for search
 Bundle 'git://github.com/rking/ag.vim.git'
@@ -265,5 +265,5 @@ Bundle 'alfredodeza/coveragepy.vim'
 " Tagbar for navigation by tags using CTags
 Bundle "git://github.com/majutsushi/tagbar.git"
 let g:tagbar_autofocus = 1
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-map <Leader>. :TagbarToggle<CR>
+map <leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <leader>. :TagbarToggle<CR>
