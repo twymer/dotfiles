@@ -197,17 +197,15 @@ Bundle 'kana/vim-textobj-user'
 " % matching for html and several other languages
 Bundle 'edsono/vim-matchit'
 
-" Easy commenting
-Bundle 'scrooloose/nerdcommenter'
-
 " Colorschemes
 Bundle 'toupeira/vim-desertink'
 Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'scrooloose/nerdtree'
-" let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore = ['\.pyc$']
-" nmap gt :NERDTreeToggle<CR>
+
+" Easy commenting
+Bundle 'scrooloose/nerdcommenter'
 
 " Syntax checking
 " This requires associated syntax checkers to be
