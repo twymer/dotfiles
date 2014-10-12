@@ -16,7 +16,6 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-colorscheme desertink
 set background=dark
 " Fix console vim colors
 set t_Co=256
@@ -193,6 +192,7 @@ Bundle 'kana/vim-textobj-user'
 
 " Colorschemes
 Bundle 'toupeira/vim-desertink'
+colorscheme desertink
 Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'scrooloose/nerdtree'
