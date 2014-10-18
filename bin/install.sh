@@ -9,5 +9,6 @@ ln -s ~/dotfiles/.tmuxinator ~/.tmuxinator
 ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zsh ~/.zsh
+ln -s ~/dotfiles/.pairs ~/.pairs
 chsh -s /bin/zsh
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle

@@ -1,0 +1,8 @@
+pairs:
+  tw: Tyler Wymer; twymer
+  es: Ethan Soergel; esoergel
+email:
+  domain: dimagi.com
+  # prefix: pair
+  # no_solo_prefix: true
+#global: true
