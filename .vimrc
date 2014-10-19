@@ -195,9 +195,6 @@ Bundle 'toupeira/vim-desertink'
 colorscheme desertink
 Bundle 'altercation/vim-colors-solarized'
 
-Bundle 'scrooloose/nerdtree'
-let NERDTreeIgnore = ['\.pyc$']
-
 " Syntax checking
 " This requires associated syntax checkers to be
 " installed (such as flake8 for Python)
