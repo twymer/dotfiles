@@ -107,6 +107,8 @@ if has("gui_running")
   set guioptions-=r
 endif
 
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+set wildignore=*.pyc
 
 """""""""""""""""""""""""""""""""""""""
 " General key mappings
