@@ -135,9 +135,6 @@ imap <C-l> <Space>=><Space>
 nmap go o<esc>
 nmap gO O<esc>
 
-" Jump to previous buffer with g-enter
-nmap g<CR> <C-^>
-
 " delete all buffers
 map <leader>B :bufdo bd<cr>
 
