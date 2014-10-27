@@ -16,6 +16,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+colorscheme desertink
 set background=dark
 " Fix console vim colors
 set t_Co=256
@@ -190,8 +191,6 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 
 " Colorschemes
-Bundle 'toupeira/vim-desertink'
-colorscheme desertink
 Bundle 'altercation/vim-colors-solarized'
 
 " Syntax checking
@@ -237,9 +236,6 @@ map <leader>. :TagbarToggle<CR>
 
 " Parse coverage reports
 Bundle 'alfredodeza/coveragepy.vim'
-
-" Python indenter
-Bundle 'hynek/vim-python-pep8-indent'
 
 " Install tabular and set up common tabulated shortcuts
 Bundle 'godlygeek/tabular'
