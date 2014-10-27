@@ -7,7 +7,7 @@
       launch session "Default session"
       tell the last session
         write text "elasticsearch"
-        write text "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+        # write text "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
         write text "exit"
       end tell
 
