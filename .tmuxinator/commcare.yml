@@ -1,22 +1,24 @@
 # ~/.tmuxinator/commcare.yml
 project_name: commcare
 project_root: ~/code/dimagi/commcare-hq
-pre: elasticsearch & && pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+pre: elasticsearch &
+tmux_options: -v -2
 windows:
   - work:
-    - sourcehq
+    - workon hq_env15
     - vim
+  - tests:
+    - workon hq_env15
   - server:
-    - sourcehq
+    - workon hq_env15
     - ./manage.py runserver
   - couchdb:
     - couchdb
   - ptop:
-    - sourcehq
-    - ./manage.py run_ptop --all
-#  - xformserver: sourcehq && jython submodules/touchforms-src/touchforms/backend/xformserver.py
+    - workon hq_env15
+      # - ./manage.py run_ptop --all
   - celery:
-    - sourcehq
+    - workon hq_env15
     - ./manage.py celeryd -P gevent --verbosity=2 --beat --statedb=celery.db --events
   - redis:
     - redis-server
