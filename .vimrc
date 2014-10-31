@@ -16,10 +16,10 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-colorscheme desertink
-set background=dark
 " Fix console vim colors
 set t_Co=256
+set background=dark
+colorscheme desertink
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
