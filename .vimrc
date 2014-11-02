@@ -169,6 +169,8 @@ map <leader>p :let g:ctrlp_working_path_mode = 'a'<cr>
 map <leader>P :let g:ctrlp_working_path_mode = 'ra'<cr>
 " Respect the .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+" Don't jump to open buffers in other tabs
+let g:ctrlp_switch_buffer = 0
 
 " Undo tree
 Bundle "git://github.com/sjl/gundo.vim.git"
