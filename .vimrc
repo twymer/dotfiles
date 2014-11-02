@@ -95,15 +95,6 @@ if has("autocmd")
       \ endif
 endif
 
-if has("gui_running")
-  " Hide the toolbar
-  set go-=T
-
-  " Don't show scrollbars
-  set guioptions-=L
-  set guioptions-=r
-endif
-
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 set wildignore=*.pyc
 
