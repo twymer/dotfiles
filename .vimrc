@@ -29,7 +29,6 @@ set hlsearch
 " Status line
 set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
 " Highlight column 80
 set colorcolumn=80
