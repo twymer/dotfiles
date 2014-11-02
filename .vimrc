@@ -18,21 +18,18 @@ Bundle 'gmarik/vundle'
 
 " Fix console vim colors
 set t_Co=256
+
 set background=dark
 colorscheme desertink
+set guifont=Consolas:h14
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-    syntax on
-    set hlsearch
-    set guifont=Monaco:h15
-endif
+syntax on
+set hlsearch
 
 " Status line
-:set laststatus=2
-:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-:hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
+set laststatus=2
+set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
 " Highlight column 80
 set colorcolumn=80
