@@ -30,7 +30,6 @@ set t_Co=256
 set background=dark
 colorscheme desertink
 
-" Status line
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 " Tabs settings
@@ -73,7 +72,7 @@ set wildignore=*.pyc
 """""""""""""""""""""""""""""""""""""""
 " General key mappings
 """""""""""""""""""""""""""""""""""""""
-" Clear highlight searches
+" Clear search highlights
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Select last paste or modified set of lines
@@ -95,7 +94,7 @@ imap <C-l> <Space>=><Space>
 nmap go o<esc>
 nmap gO O<esc>
 
-" delete all buffers
+" Delete all buffers
 map <leader>B :bufdo bd<cr>
 
 " Better switch split bindings
@@ -107,11 +106,11 @@ nnoremap <c-l> <c-w>l
 """""""""""""""""""""""""""""""""""""""
 " Text expands
 """""""""""""""""""""""""""""""""""""""
-" Lazy rubyist
+" Lazy Rubyist
 iabbrev ppry require 'pry'; binding.pry
 iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger; 0;
 
-" Lazy pythonista
+" Lazy Pythonista
 iabbrev ppdb import pdb; pdb.set_trace()
 iabbrev ipdb import ipdb; ipdb.set_trace()
 iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
