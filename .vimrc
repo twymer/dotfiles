@@ -5,11 +5,19 @@
 """""""""""""""""""""""""""""""""""""""
 " General setup
 """""""""""""""""""""""""""""""""""""""
-" Kill compatibility
 set nocompatible
-
-" For plugins
-filetype off
+syntax on
+set number          " Show line numbers
+set mouse=a         " Enable mouse
+set colorcolumn=80  " Always highlight 80th
+set ruler           " Always show cursor
+set showmatch       " Show matching paren
+set history=1000    " Long history
+set ignorecase      " Ignore case in search
+set smartcase       " ... unless there are caps
+set laststatus=2    " Always show status line
+set incsearch       " Show first match as search is typed
+set hlsearch        " Highlight all search matches
 
 " Kick on Vundle
 set rtp+=~/.vim/bundle/vundle
@@ -21,20 +29,9 @@ set t_Co=256
 
 set background=dark
 colorscheme desertink
-set guifont=Consolas:h14
-
-syntax on
-set hlsearch
 
 " Status line
-set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-
-" Highlight column 80
-set colorcolumn=80
-
-" Always show line numbers
-set number
 
 " Tabs settings
 set sw=2 sts=2 et
@@ -44,40 +41,15 @@ augroup filetypes
     autocmd FileType python,c,cpp,tex,htmldjango set sw=4 sts=4 et
 augroup END
 
-" Enable mouse
-set mouse=a
-
 " Store temp files elsewhere
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Searches not case-sensitive unless caps are used
-set ignorecase
-set smartcase
-
-" Long history
-set history=1000
-set undolevels=1000
-
-" Allow unwritten background buffers
-set hidden
-
 " Use Q for formatting instead of Ex mode
 map Q gq
 
-" Show first match as search is typed
-set incsearch
-" Highlight all search matches
-set hlsearch
-
 " Show trailing whitespace
 set list listchars=tab:»·,trail:·
-"
-" Always show cursor
-set ruler
-
-" Show matching paren
-set showmatch
 
 if has("autocmd")
   " Filetype detection
