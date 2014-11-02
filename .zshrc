@@ -88,3 +88,6 @@ alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
+
+# Fix word and start/end of line jumps in tmux
+bindkey -e
