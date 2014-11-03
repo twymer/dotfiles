@@ -15,7 +15,7 @@
       launch session "Default session"
       tell the last session
         set name to "editor"
-        write text "workonhq"
+        write text workonhq
         write text cdhqdir
         write text "vim"
       end tell
@@ -24,14 +24,14 @@
       tell the last session
         set name to "tests"
         write text cdhqdir
-        write text "workonhq"
+        write text workonhq
       end tell
 
       launch session "Default session"
       tell the last session
         set name to "server"
         write text cdhqdir
-        write text "workonhq"
+        write text workonhq
         write text "./manage.py runserver"
       end tell
 
@@ -45,7 +45,7 @@
       tell the last session
         set name to "ptop"
         write text cdhqdir
-        write text "workonhq"
+        write text workonhq
         # write text "./manage.py run_ptop --all"
       end tell
 
@@ -53,7 +53,7 @@
       tell the last session
         set name to "celery"
         write text cdhqdir
-        write text "workonhq"
+        write text workonhq
         write text "./manage.py celeryd -P gevent --verbosity=2 --beat --statedb=celery.db --events"
       end tell
 
