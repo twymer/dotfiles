@@ -18,6 +18,7 @@ set smartcase       " ... unless there are caps
 set laststatus=2    " Always show status line
 set incsearch       " Show first match as search is typed
 set hlsearch        " Highlight all search matches
+set hidden          " Important for keeping history when switching buffers
 
 " Kick on Vundle
 set rtp+=~/.vim/bundle/vundle
