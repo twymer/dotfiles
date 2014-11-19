@@ -11,5 +11,6 @@ ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zsh ~/.zsh
 ln -s ~/dotfiles/.pairs ~/.pairs
+ln -s ~/dotfiles/.ctags ~/.ctags
 chsh -s /bin/zsh
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
