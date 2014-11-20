@@ -42,7 +42,7 @@
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 
 [core]
-  excludesfile = /Users/twymer/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor = /usr/bin/vim
 
 [push]
