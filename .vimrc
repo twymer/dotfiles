@@ -230,6 +230,9 @@ function! CustomTabularPatterns()
 endfunction
 autocmd VimEnter * call CustomTabularPatterns()
 
+" Show git info in gutter
+Bundle 'airblade/vim-gitgutter'
+
 " Easy commenting
 Bundle 'scrooloose/nerdcommenter'
 
