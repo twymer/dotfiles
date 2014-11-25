@@ -139,6 +139,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-sleuth'
+Bundle 'tpope/vim-commentary'
 
 " ZoomWin to temporarily maximize a split
 Bundle 'vim-scripts/ZoomWin'
@@ -233,9 +234,6 @@ autocmd VimEnter * call CustomTabularPatterns()
 
 " Show git info in gutter
 Bundle 'airblade/vim-gitgutter'
-
-" Easy commenting
-Bundle 'scrooloose/nerdcommenter'
 
 " % matching for html and several other languages
 Bundle 'edsono/vim-matchit'
