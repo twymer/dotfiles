@@ -91,10 +91,6 @@ nnoremap Y y$
 " Hash rocket insertion
 imap <C-l> <Space>=><Space>
 
-" Insert blank lines without going into insert mode
-nmap go o<esc>
-nmap gO O<esc>
-
 " Delete all buffers
 map <leader>B :bufdo bd<cr>
 
@@ -139,6 +135,7 @@ Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-vinegar'
 
 " ZoomWin to temporarily maximize a split
