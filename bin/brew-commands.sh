@@ -9,4 +9,3 @@ brew install wget
 brew install ctags
 brew install python
 brew install reattach-to-user-namespace
-
