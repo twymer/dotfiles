@@ -238,3 +238,12 @@ Bundle 'edsono/vim-matchit'
 " Clojure
 Bundle 'vim-scripts/VimClojure'
 au BufNewFile,BufRead *.clj set filetype=clojure
+
+" Rspec
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-dispatch'
+let g:rspec_command = "Dispatch rspec --format=progress --no-profile {spec}"
+nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
+nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
+nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
+nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
