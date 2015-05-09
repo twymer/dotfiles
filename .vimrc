@@ -28,8 +28,12 @@ Bundle 'gmarik/vundle'
 " Fix console vim colors
 set t_Co=256
 
-set background=dark
-colorscheme desertink
+" set background=dark
+" colorscheme desertink
+Bundle 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
 
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
@@ -146,9 +150,6 @@ map <leader>z :ZoomWin<CR>
 Bundle 'nelstrom/vim-textobj-rubyblock'
 " Required for rubyblock text objects
 Bundle 'kana/vim-textobj-user'
-
-" Colorschemes
-Bundle 'altercation/vim-colors-solarized'
 
 " Syntax checking
 " This requires associated syntax checkers to be
