@@ -248,3 +248,9 @@ nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
 nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
 nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
 nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
+
+
+" Underline words that match what is under cursor
+
+Bundle 'osyo-manga/vim-brightest'
+let g:brightest#highlight = { "group" : "BrightestUnderline" }
