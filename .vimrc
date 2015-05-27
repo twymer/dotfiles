@@ -238,8 +238,20 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'edsono/vim-matchit'
 
 " Clojure
-Bundle 'vim-scripts/VimClojure'
-au BufNewFile,BufRead *.clj set filetype=clojure
+Bundle 'guns/vim-clojure-static'
+" Bundle 'guns/vim-sexp'
+Bundle 'kien/rainbow_parentheses.vim'
+" Bundle 'tpope/vim-sexp-mappings-for-regular-people'
+Bundle 'tpope/vim-fireplace'
+autocmd FileType clojure RainbowParenthesesActivate
+autocmd FileType clojure RainbowParenthesesLoadRound
+autocmd FileType clojure RainbowParenthesesLoadSquare
+autocmd FileType clojure RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
+
 
 " Rspec
 Bundle 'thoughtbot/vim-rspec'
