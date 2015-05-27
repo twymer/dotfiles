@@ -32,8 +32,9 @@ set t_Co=256
 " colorscheme desertink
 Bundle 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
-set background=light
-colorscheme solarized
+command! Dark :set background=dark | colorscheme solarized
+command! Light :set background=light | colorscheme solarized
+Dark
 
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
