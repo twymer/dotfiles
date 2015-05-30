@@ -87,7 +87,8 @@ alias bi="b install --path vendor"
 alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
-alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
+alias binit="bi && b package && echo 'vendor/ruby\nvendor/cache' >> .gitignore"
+alias yolo="be rake db:drop && be rake db:create && be rake db:migrate"
 
 # Fix word and start/end of line jumps in tmux
 bindkey -e

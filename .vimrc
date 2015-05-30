@@ -256,7 +256,7 @@ autocmd FileType clojure RainbowParenthesesLoadBraces
 " Rspec
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-dispatch'
-let g:rspec_command = "Dispatch rspec --format=progress --no-profile {spec}"
+let g:rspec_command = "Dispatch bundle exec rspec --format=progress --no-profile {spec}"
 nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
 nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
 nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
