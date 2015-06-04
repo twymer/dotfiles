@@ -252,7 +252,6 @@ autocmd FileType clojure RainbowParenthesesLoadBraces
 " au Syntax * RainbowParenthesesLoadSquare
 " au Syntax * RainbowParenthesesLoadBraces
 
-
 " Rspec
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-dispatch'
@@ -261,3 +260,10 @@ nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
 nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
 nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
 nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
+
+" Javascript
+Bundle 'pangloss/vim-javascript'
+
+" React/JSX
+Bundle 'mxw/vim-jsx'
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
