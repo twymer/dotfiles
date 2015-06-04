@@ -13,5 +13,6 @@ ln -s ~/dotfiles/.zsh ~/.zsh
 ln -s ~/dotfiles/.pairs ~/.pairs
 ln -s ~/dotfiles/.ctags ~/.ctags
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
+ln -s ~/dotfiles/.agignore ~/.agignore
 chsh -s /bin/zsh
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
