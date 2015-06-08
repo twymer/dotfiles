@@ -69,11 +69,6 @@ export PATH="/usr/local/bin:$PATH"
 # Random project related shortcuts
 alias ss='script/server'
 alias ssd='script/server --debugging'
-alias sourcehq='workon hq_env15'
-alias starthq='bash ~/dotfiles/bin/starthq.sh'
-alias hq='cd ~/code/dimagi/commcare-hq && sourcehq'
-alias flipit='python manage.py ptop_es_manage --flip_all_aliases'
-alias fluffit='./manage.py syncdb && ./manage.py reset_pillowtop_checkpoints && ./manage.py run_ptop'
 
 alias pip='ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip'
 
