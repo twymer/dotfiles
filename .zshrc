@@ -1,19 +1,19 @@
 source ~/.zsh/functions/zsh_recompile.zsh
 
 # Before other PATHs...
-PATH=${PATH}:/usr/local/share/python
+# PATH=${PATH}:/usr/local/share/python
 
 # Python
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
-  source /usr/local/bin/virtualenvwrapper.sh
-else
-  echo "WARNING: Can't find virtualenvwrapper.sh"
-fi
+# export WORKON_HOME=$HOME/.virtualenvs
+# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+# export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+# export PIP_VIRTUALENV_BASE=$WORKON_HOME
+# export PIP_RESPECT_VIRTUALENV=true
+# if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+#   source /usr/local/bin/virtualenvwrapper.sh
+# else
+#   echo "WARNING: Can't find virtualenvwrapper.sh"
+# fi
 
 autoload -U compinit promptinit
 setopt promptsubst
@@ -41,8 +41,6 @@ export GREP_OPTIONS="--color"
 
 eval "$(rbenv init -)"
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
-source /usr/local/bin/virtualenvwrapper.sh
 
 # Set editor mode for tmuxinator
 export EDITOR=vim
