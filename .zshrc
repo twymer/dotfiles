@@ -84,6 +84,9 @@ alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby\nvendor/cache' >> .gitignore"
 alias yolo="be rake db:drop && be rake db:create && be rake db:migrate"
+alias gobo="sh ~/dotfiles/bin/start-bo.sh"
+alias bo="cd ~/code/dbc/tech/backoffice"
+alias dbc="cd ~/code/dbc/tech"
 
 # Fix word and start/end of line jumps in tmux
 bindkey -e
