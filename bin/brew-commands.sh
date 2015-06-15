@@ -9,3 +9,5 @@ brew install wget
 brew install ctags
 brew install python
 brew install reattach-to-user-namespace
+brew install rbenv ruby-build
+brew install heroku
