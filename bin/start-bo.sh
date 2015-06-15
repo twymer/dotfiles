@@ -29,6 +29,13 @@
 
       launch session "Default session"
       tell the last session
+        set name to "grunt"
+        write text bodir
+        write text "grunt"
+      end tell
+
+      launch session "Default session"
+      tell the last session
         set name to "sso"
         write text ssodir
         write text "powder link"
