@@ -29,7 +29,7 @@
 
       launch session "Default session"
       tell the last session
-        set name to "grunt"
+        set name to "gulp"
         write text bodir
         write text "grunt"
       end tell
