@@ -183,8 +183,6 @@ Bundle 'git://github.com/rking/ag.vim.git'
 nmap g/ :Ag!<space>
 nmap g* :Ag! -w <C-R><C-W><space>
 nmap ga :AgAdd!<space>
-nmap gn :cnext<CR>
-nmap gp :cprev<CR>
 nmap gq :ccl<CR>
 nmap gl :cwindow<CR>
 " Install ack as well due to --type being helpful
