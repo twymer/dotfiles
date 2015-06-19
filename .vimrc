@@ -110,6 +110,7 @@ nnoremap <c-l> <c-w>l
 """""""""""""""""""""""""""""""""""""""
 " Lazy Rubyist
 iabbrev ppry require 'pry'; binding.pry
+iabbrev rpry logger.info("\n***********\nPRY STARTED\n***********\n"); require 'pry-remote'; binding.remote_pry
 iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger; 0;
 
 " Lazy Pythonista
