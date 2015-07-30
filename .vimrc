@@ -161,7 +161,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/bufexplorer.zip'
 noremap <leader>e :BufExplorerHorizontalSplit<CR>
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 nnoremap <leader>b :<C-U>CtrlPBuffer<CR>
 nnoremap <leader>t :<C-U>CtrlP<CR>
 nnoremap <leader>T :<C-U>CtrlPTag<CR>
@@ -174,11 +174,11 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 let g:ctrlp_switch_buffer = 0
 
 " Undo tree
-Plugin 'git://github.com/sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
 map <leader>h :GundoToggle<CR>
 
 " AG for search
-Plugin 'git://github.com/rking/ag.vim.git'
+Plugin 'rking/ag.vim'
 nmap g/ :Ag!<space>
 nmap g* :Ag! -w <C-R><C-W><space>
 nmap ga :AgAdd!<space>
@@ -188,7 +188,7 @@ nmap gl :cwindow<CR>
 Plugin 'mileszs/ack.vim'
 
 " Tagbar for navigation by tags using CTags
-Plugin 'git://github.com/majutsushi/tagbar.git'
+Plugin 'majutsushi/tagbar'
 let g:tagbar_autofocus = 1
 map <leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <leader>. :TagbarToggle<CR>
