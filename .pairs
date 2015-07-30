@@ -1,8 +1,8 @@
 pairs:
-  tw: Tyler Wymer; twymer
-  es: Ethan Soergel; esoergel
+  tw: Tyler Wymer; tyler
+  ns: Nikola Savic; nikola
 email:
-  domain: dimagi.com
+  domain: devbootcamp.com
   # prefix: pair
   # no_solo_prefix: true
 #global: true
