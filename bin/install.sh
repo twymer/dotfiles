@@ -17,4 +17,4 @@ ln -s ~/dotfiles/.agignore ~/.agignore
 ln -s ~/.vimrc ~/.nvimrc
 ln -s ~/.vim ~/.nvim
 chsh -s /bin/zsh
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
