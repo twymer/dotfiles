@@ -193,23 +193,23 @@ let g:tagbar_autofocus = 1
 map <leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <leader>. :TagbarToggle<CR>
 
-" Lightweight status bar
-Bundle 'bling/vim-airline'
-" Don't also show default mode indicators
-set noshowmode
-" Show buffers bar if only one tab is open
-let g:airline#extensions#tabline#enabled = 1
-" Hide the file type/encoding and syntastic errors parts
-let g:airline_section_y = ''
-let g:airline_section_warning = ''
-" Better seperators since I don't use the fonts
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" " Lightweight status bar
+" Plugin 'bling/vim-airline'
+" " Don't also show default mode indicators
+" set noshowmode
+" " Show buffers bar if only one tab is open
+" let g:airline#extensions#tabline#enabled = 1
+" " Hide the file type/encoding and syntastic errors parts
+" let g:airline_section_y = ''
+" let g:airline_section_warning = ''
+" " Better seperators since I don't use the fonts
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline_left_sep = ' '
+" let g:airline_left_alt_sep = '|'
+" let g:airline_right_sep = ' '
+" let g:airline_right_alt_sep = '|'
+" let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " Parse coverage reports
 Plugin 'alfredodeza/coveragepy.vim'

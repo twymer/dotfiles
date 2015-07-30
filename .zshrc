@@ -59,9 +59,9 @@ alias cc-opengl-sdl='cc -lSDLmain -lSDL -framework OpenGL -framework Cocoa'
 alias cpp-sdl='g++ -lSDLmain -lSDL -lSDL_image -framework Cocoa'
 
 # use vim compiled for macvim instead of system
-# alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 # use nvim instead of vim
-alias vim='nvim'
+# alias vim='nvim'
 
 # use exhuberant ctags properly
 export PATH="/usr/local/bin:$PATH"
