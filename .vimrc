@@ -23,7 +23,7 @@ set hidden          " Important for keeping history when switching buffers
 " Kick on Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Fix console vim colors
 set t_Co=256
@@ -54,22 +54,6 @@ map Q gq
 
 " Show trailing whitespace
 set list listchars=tab:»·,trail:·
-
-if has("autocmd")
-  " Filetype detection
-  filetype plugin indent on
-
-  " Set textwidth in text files only
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal g`\"" |
-      \ endif
-endif
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 set wildignore=*.pyc
@@ -265,3 +249,22 @@ Plugin 'pangloss/vim-javascript'
 " React/JSX
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Has to be called before any plugin commands
+call vundle#end()
+
+if has("autocmd")
+  " Filetype detection
+  filetype plugin indent on
+
+  " Set textwidth in text files only
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
+endif
