@@ -3,7 +3,7 @@
   tell application "iTerm"
     set myterm to (make new terminal)
     set bodir to "cd ~/code/dbc/tech/backoffice && clear"
-    set ssodir to "cd ~/code/dbc/tech/sso && clear"
+    set identitydir to "cd ~/code/dbc/tech/identity && clear"
 
     tell myterm
       launch session "Default session"
@@ -29,15 +29,15 @@
 
       launch session "Default session"
       tell the last session
-        set name to "gulp"
+        set name to "fe"
         write text bodir
-        write text "gulp"
+        write text "be rake fe:watch"
       end tell
 
       launch session "Default session"
       tell the last session
-        set name to "sso"
-        write text ssodir
+        set name to "identity"
+        write text identitydir
         write text "powder link"
       end tell
 
