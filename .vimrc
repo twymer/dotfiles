@@ -216,9 +216,6 @@ autocmd VimEnter * call CustomTabularPatterns()
 " Show git info in gutter
 Plugin 'airblade/vim-gitgutter'
 
-" % matching for html and several other languages
-Plugin 'edsono/vim-matchit'
-
 " Clojure
 Plugin 'guns/vim-clojure-static'
 " Plugin 'guns/vim-sexp'
