@@ -241,7 +241,9 @@ nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
 nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
 
 " Javascript
-Plugin 'pangloss/vim-javascript'
+" Plugin 'pangloss/vim-javascript'
+Plugin 'othree/yajs.vim'
+" Plugin 'jelera/vim-javascript-syntax'
 
 " React/JSX
 Plugin 'mxw/vim-jsx'
