@@ -140,6 +140,8 @@ Plugin 'kana/vim-textobj-user'
 " This requires associated syntax checkers to be
 " installed (such as flake8 for Python)
 Plugin 'scrooloose/syntastic'
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " Buffer exploring
 Plugin 'vim-scripts/bufexplorer.zip'
