@@ -132,6 +132,8 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'tpope/vim-projectionist'
 
 " ZoomWin to temporarily maximize a split
 Plugin 'vim-scripts/ZoomWin'
