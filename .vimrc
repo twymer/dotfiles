@@ -112,6 +112,12 @@ au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hb set filetype=mustache s
 Plugin 'kchmck/vim-coffee-script'
 au! BufRead,BufNewFile *.coffee set filetype=coffee
 
+Plugin 'scrooloose/nerdtree'
+let NERDTreeHijackNetrw = 0
+nmap <leader>g :NERDTreeToggle<CR>
+nmap <leader>G :NERDTreeFind<CR>
+
+
 " <3 Tim Pope <3
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-cucumber'
