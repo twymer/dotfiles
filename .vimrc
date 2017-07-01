@@ -41,7 +41,7 @@ set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set sw=2 sts=2 et
 augroup filetypes
     autocmd!
-    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,slim, elixir set ai sw=2 sts=2 et
+    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,slim set ai sw=2 sts=2 et
     autocmd FileType python,c,cpp,tex,htmldjango set sw=4 sts=4 et
 augroup END
 
