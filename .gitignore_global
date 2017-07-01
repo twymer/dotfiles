@@ -1,2 +1,6 @@
 tags
 .DS_Store
+ngrok
+
+db.dump
+dump.rdb
