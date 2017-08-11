@@ -28,12 +28,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Fix console vim colors
 set t_Co=256
 
-colorscheme desertink
+Plugin 'toupeira/vim-desertink'
 Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
-command! Dark :set background=dark | colorscheme solarized
-command! Light :set background=light | colorscheme solarized
-" Dark
+" command! Dark :set background=dark | colorscheme solarized
+" command! Light :set background=light | colorscheme solarized
 
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
@@ -266,6 +265,8 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Has to be called before any plugin commands
 call vundle#end()
+
+colorscheme desertink
 
 if has("autocmd")
   " Filetype detection
