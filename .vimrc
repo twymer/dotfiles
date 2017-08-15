@@ -192,7 +192,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Don't also show default mode indicators
 set noshowmode
 " Show buffers bar if only one tab is open
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 " Hide the file type/encoding
 let g:airline_section_y = ''
 
