@@ -104,12 +104,12 @@ iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
 " Plugins and their setup
 """""""""""""""""""""""""""""""""""""""
 " Handlebars, Mustache, and Friends
-Plugin 'mustache/vim-mustache-handlebars'
-au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hb set filetype=mustache syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
+" Plugin 'mustache/vim-mustache-handlebars'
+" au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hb set filetype=mustache syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
 
 " Coffee
-Plugin 'kchmck/vim-coffee-script'
-au! BufRead,BufNewFile *.coffee set filetype=coffee
+" Plugin 'kchmck/vim-coffee-script'
+" au! BufRead,BufNewFile *.coffee set filetype=coffee
 
 Plugin 'scrooloose/nerdtree'
 let NERDTreeHijackNetrw = 0
@@ -197,7 +197,7 @@ set noshowmode
 let g:airline_section_y = ''
 
 " Parse coverage reports
-Plugin 'alfredodeza/coveragepy.vim'
+" Plugin 'alfredodeza/coveragepy.vim'
 
 " Install tabular and set up common tabulated shortcuts
 Plugin 'godlygeek/tabular'
@@ -218,19 +218,13 @@ autocmd VimEnter * call CustomTabularPatterns()
 Plugin 'airblade/vim-gitgutter'
 
 " Clojure
-Plugin 'guns/vim-clojure-static'
-" Plugin 'guns/vim-sexp'
-Plugin 'kien/rainbow_parentheses.vim'
-" Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-Plugin 'tpope/vim-fireplace'
-autocmd FileType clojure RainbowParenthesesActivate
-autocmd FileType clojure RainbowParenthesesLoadRound
-autocmd FileType clojure RainbowParenthesesLoadSquare
-autocmd FileType clojure RainbowParenthesesLoadBraces
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
+" Plugin 'guns/vim-clojure-static'
+" Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'tpope/vim-fireplace'
+" autocmd FileType clojure RainbowParenthesesActivate
+" autocmd FileType clojure RainbowParenthesesLoadRound
+" autocmd FileType clojure RainbowParenthesesLoadSquare
+" autocmd FileType clojure RainbowParenthesesLoadBraces
 
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
@@ -270,8 +264,8 @@ if has("autocmd")
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal g`\"" |
-      \ endif
+  " autocmd BufReadPost *
+  "     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  "     \   exe "normal g`\"" |
+  "     \ endif
 endif
