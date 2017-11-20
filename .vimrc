@@ -21,6 +21,7 @@ set hlsearch        " Highlight all search matches
 set hidden          " Important for keeping history when switching buffers
 
 " Kick on Vundle
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -29,12 +30,16 @@ Plugin 'VundleVim/Vundle.vim'
 set t_Co=256
 
 Plugin 'toupeira/vim-desertink'
+colorscheme desertink
 Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 " command! Dark :set background=dark | colorscheme solarized
 " command! Light :set background=light | colorscheme solarized
 
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+" Elixir
+Plugin 'elixir-editors/vim-elixir'
 
 " Tabs settings
 set sw=2 sts=2 et
@@ -226,11 +231,6 @@ Plugin 'airblade/vim-gitgutter'
 " autocmd FileType clojure RainbowParenthesesLoadSquare
 " autocmd FileType clojure RainbowParenthesesLoadBraces
 
-" Elixir
-Plugin 'elixir-lang/vim-elixir'
-au BufNewFile,BufRead *.ex set filetype=elixir
-au BufNewFile,BufRead *.exs set filetype=elixir
-
 " Rspec
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-dispatch'
@@ -251,21 +251,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Has to be called before any plugin commands
 call vundle#end()
+filetype plugin indent on
 
-colorscheme desertink
-
-if has("autocmd")
-  " Filetype detection
-  filetype plugin indent on
-
-  " Set textwidth in text files only
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " autocmd BufReadPost *
-  "     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  "     \   exe "normal g`\"" |
-  "     \ endif
-endif
+" Set textwidth in text files only
+autocmd FileType text setlocal textwidth=78
