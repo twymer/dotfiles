@@ -88,5 +88,9 @@ alias gobo="sh ~/dotfiles/bin/start-bo.sh"
 alias bo="cd ~/code/dbc/tech/backoffice"
 alias dbc="cd ~/code/dbc/tech"
 
+alias restartchannels='docker-compose exec cedar-worker-channels bash -c "supervisorctl restart channels-worker"; docker-compose exec cedar-worker-celery bash -c "supervisorctl restart celery-worker"'
+alias restartsupervisor='docker-compose exec cedar-api bash -c "supervisorctl restart all"'
+alias restart='restartchannels && restartsupervisor && say -v whisper done'
+
 # Fix word and start/end of line jumps in tmux
 bindkey -e

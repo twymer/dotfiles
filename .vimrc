@@ -166,6 +166,7 @@ nnoremap <leader>T :<C-U>CtrlPTag<CR>
 " Toggle working path mode (important for submodules)
 map <leader>p :let g:ctrlp_working_path_mode = 'a'<cr>
 map <leader>P :let g:ctrlp_working_path_mode = 'ra'<cr>
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " Respect the .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 " Don't jump to open buffers in other tabs
