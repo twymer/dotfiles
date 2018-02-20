@@ -72,8 +72,6 @@ alias ssd='script/server --debugging'
 
 alias pip='ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip'
 
-source ~/dotfiles/bin/update-code.sh
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -83,11 +81,9 @@ alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby\nvendor/cache' >> .gitignore"
-alias yolo="be rake db:drop && be rake db:create && be rake db:migrate"
-alias gobo="sh ~/dotfiles/bin/start-bo.sh"
-alias bo="cd ~/code/dbc/tech/backoffice"
-alias dbc="cd ~/code/dbc/tech"
 
+# Cedar aliases
+alias startcedar="sh ~/dotfiles/bin/start-cedar.sh"
 alias restartchannels='docker-compose exec cedar-worker-channels bash -c "supervisorctl restart channels-worker"; docker-compose exec cedar-worker-celery bash -c "supervisorctl restart celery-worker"'
 alias restartsupervisor='docker-compose exec cedar-api bash -c "supervisorctl restart all"'
 alias restart='restartchannels && restartsupervisor && say done'
