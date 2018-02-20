@@ -84,9 +84,7 @@ alias binit="bi && b package && echo 'vendor/ruby\nvendor/cache' >> .gitignore"
 
 # Cedar aliases
 alias startcedar="sh ~/dotfiles/bin/start-cedar.sh"
-alias restartchannels='docker-compose exec cedar-worker-channels bash -c "supervisorctl restart channels-worker"; docker-compose exec cedar-worker-celery bash -c "supervisorctl restart celery-worker"'
-alias restartsupervisor='docker-compose exec cedar-api bash -c "supervisorctl restart all"'
-alias restart='restartchannels && restartsupervisor && say done'
+source ~/dotfiles/bin/cedar-scripts.sh
 
 # Fix word and start/end of line jumps in tmux
 bindkey -e
