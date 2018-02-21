@@ -1,19 +1,29 @@
-function reset-db() {
+function _reset() {
   docker-compose run cedar-api ./manage.py nukedb
   docker-compose run cedar-api ./manage.py migrate
   docker-compose run cedar-api ./manage.py loaddata api_app/fixtures/initial.json
-  osascript -e 'display notification "Cedar DB is ready" with title "Done"'
 }
 
-function seed-tests() {
+function reset-db() {
+  _reset
+  osascript -e 'display notification "Cedar DB is ready" with title "Done" sound name "Hero"'
+}
+
+function _seed() {
   docker-compose run cedar-api ./manage.py loaddata automated_ui_tests.json 
   docker-compose run cedar-api ./manage.py shell < /usr/local/cedar/api/api_app/scripts/create-automated-ui-test-patients.py
-  osascript -e 'display notification "Cedar DB is fully seeded" with title "Done"'
+}
+
+
+function seed-tests() {
+  _seed
+  osascript -e 'display notification "Cedar DB is fully seeded" with title "Done" sound name "Hero"'
 }
 
 function reset-db-full() {
   reset-db
   seed-tests
+  osascript -e 'display notification "Cedar DB is reset and seeded" with title "Done" sound name "Hero"'
 }
 
 function restart-channels() {
@@ -28,5 +38,5 @@ function restart-supervisor() {
 function restart() {
   restart-channels
   restart-supervisor
-  osascript -e 'display notification "Cedar app is done restarting" with title "Done"'
+  osascript -e 'display notification "Cedar app is done restarting" with title "Done" sound name "Hero"'
 }
