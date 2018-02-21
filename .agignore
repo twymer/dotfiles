@@ -2,3 +2,4 @@
 node_modules/
 db/markdown/
 tags
+provider.bundle.js
