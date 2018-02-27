@@ -40,3 +40,9 @@ function restart() {
   restart-supervisor
   osascript -e 'display notification "Cedar app is done restarting" with title "Done" sound name "Hero"'
 }
+
+function cedar-exports() {
+  export CEDAR_SERVICES_ACTIVE=true
+  export HOSTNAME=`hostname`
+  export AWS_CREDENTIAL_HOME=~
+}
