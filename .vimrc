@@ -223,6 +223,8 @@ autocmd VimEnter * call CustomTabularPatterns()
 
 " Show git info in gutter
 Plugin 'airblade/vim-gitgutter'
+" Change default (4s) to show updates quickly
+set updatetime=100
 
 " Clojure
 " Plugin 'guns/vim-clojure-static'
