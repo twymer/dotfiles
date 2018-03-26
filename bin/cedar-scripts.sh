@@ -10,8 +10,8 @@ function reset-db() {
 }
 
 function _seed() {
-  docker-compose run cedar-api ./manage.py loaddata automated_ui_tests.json 
-  docker-compose run cedar-api ./manage.py shell < /usr/local/cedar/api/api_app/scripts/create-automated-ui-test-patients.py
+  docker-compose run cedar-api ./manage.py loaddata automated_ui_tests.json
+  # docker-compose run cedar-api ./manage.py shell < /usr/local/cedar/api/api_app/scripts/create-automated-ui-test-patients.py
 }
 
 
@@ -21,8 +21,8 @@ function seed-tests() {
 }
 
 function reset-db-full() {
-  reset-db
-  seed-tests
+  _reset
+  _seed
   osascript -e 'display notification "Cedar DB is reset and seeded" with title "Done" sound name "Hero"'
 }
 
@@ -45,4 +45,14 @@ function cedar-exports() {
   export CEDAR_SERVICES_ACTIVE=true
   export HOSTNAME=`hostname`
   export AWS_CREDENTIAL_HOME=~
+}
+
+function makemessages() {
+  django-admin makemessages -l=es
+  osascript -e 'display notification "makemessages command complete" with title "Done" sound name "Hero"'
+}
+
+function compilemessages() {
+  django-admin compilemessages
+  osascript -e 'display notification "compilemessages command complete" with title "Done" sound name "Hero"'
 }
