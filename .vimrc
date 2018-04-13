@@ -19,6 +19,12 @@ set laststatus=2    " Always show status line
 set incsearch       " Show first match as search is typed
 set hlsearch        " Highlight all search matches
 set hidden          " Important for keeping history when switching buffers
+set nojoinspaces    " Don't add extra spaces on line joining with punctuation
+
+
+" Prevent Vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
 
 " Kick on Vundle
 filetype off
@@ -33,13 +39,8 @@ Plugin 'toupeira/vim-desertink'
 colorscheme desertink
 Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
-" command! Dark :set background=dark | colorscheme solarized
-" command! Light :set background=light | colorscheme solarized
 
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-
-" Elixir
-Plugin 'elixir-editors/vim-elixir'
 
 " Tabs settings
 set sw=2 sts=2 et
@@ -108,13 +109,6 @@ iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
 """""""""""""""""""""""""""""""""""""""
 " Plugins and their setup
 """""""""""""""""""""""""""""""""""""""
-" Handlebars, Mustache, and Friends
-" Plugin 'mustache/vim-mustache-handlebars'
-" au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hb set filetype=mustache syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
-
-" Coffee
-" Plugin 'kchmck/vim-coffee-script'
-" au! BufRead,BufNewFile *.coffee set filetype=coffee
 
 Plugin 'scrooloose/nerdtree'
 let NERDTreeHijackNetrw = 0
@@ -155,6 +149,7 @@ Plugin 'scrooloose/syntastic'
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['pylama']
 
 " Buffer exploring
 Plugin 'vim-scripts/bufexplorer.zip'
@@ -203,9 +198,6 @@ set noshowmode
 " Hide the file type/encoding
 let g:airline_section_y = ''
 
-" Parse coverage reports
-" Plugin 'alfredodeza/coveragepy.vim'
-
 " Install tabular and set up common tabulated shortcuts
 Plugin 'godlygeek/tabular'
 function! CustomTabularPatterns()
@@ -226,15 +218,6 @@ Plugin 'airblade/vim-gitgutter'
 " Change default (4s) to show updates quickly
 set updatetime=100
 
-" Clojure
-" Plugin 'guns/vim-clojure-static'
-" Plugin 'kien/rainbow_parentheses.vim'
-" Plugin 'tpope/vim-fireplace'
-" autocmd FileType clojure RainbowParenthesesActivate
-" autocmd FileType clojure RainbowParenthesesLoadRound
-" autocmd FileType clojure RainbowParenthesesLoadSquare
-" autocmd FileType clojure RainbowParenthesesLoadBraces
-
 " Rspec
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-dispatch'
@@ -245,13 +228,15 @@ nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
 nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
 
 " Javascript
-" Plugin 'pangloss/vim-javascript'
 Plugin 'othree/yajs.vim'
-" Plugin 'jelera/vim-javascript-syntax'
 
 " React/JSX
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Elixir
+Plugin 'elixir-editors/vim-elixir'
+
 
 " Has to be called before any plugin commands
 call vundle#end()
