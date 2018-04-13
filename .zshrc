@@ -60,6 +60,7 @@ alias cpp-sdl='g++ -lSDLmain -lSDL -lSDL_image -framework Cocoa'
 
 # use vim compiled for macvim instead of system
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 # use nvim instead of vim
 # alias vim='nvim'
 
