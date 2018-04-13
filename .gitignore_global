@@ -4,3 +4,5 @@ ngrok
 
 db.dump
 dump.rdb
+
+awscli-bundle*
