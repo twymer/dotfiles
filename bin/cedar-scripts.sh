@@ -1,5 +1,9 @@
-function _reset() {
+function _nukedb() {
   docker-compose run cedar-api ./manage.py nukedb
+}
+
+function _reset() {
+  _nukedb
   docker-compose run cedar-api ./manage.py migrate
   docker-compose run cedar-api ./manage.py loaddata api_app/fixtures/initial.json
 }
