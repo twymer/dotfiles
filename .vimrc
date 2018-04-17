@@ -197,6 +197,7 @@ set noshowmode
 " let g:airline#extensions#tabline#enabled = 1
 " Hide the file type/encoding
 let g:airline_section_y = ''
+let g:airline#extensions#branch#displayed_head_limit = 15
 
 " Install tabular and set up common tabulated shortcuts
 Plugin 'godlygeek/tabular'
