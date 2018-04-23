@@ -21,6 +21,9 @@ set hlsearch        " Highlight all search matches
 set hidden          " Important for keeping history when switching buffers
 set nojoinspaces    " Don't add extra spaces on line joining with punctuation
 
+" Don't make backup files
+set nobackup
+set nowritebackup
 
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
