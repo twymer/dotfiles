@@ -39,8 +39,8 @@ function restart_supervisor {
 }
 
 function restart {
-  restart-channels
-  restart-supervisor
+  restart_channels
+  restart_supervisor
   _success "Cedar app is done restarting"
 }
 
