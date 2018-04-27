@@ -241,10 +241,46 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " Elixir
 Plugin 'elixir-editors/vim-elixir'
 
-
 " Has to be called before any plugin commands
 call vundle#end()
 filetype plugin indent on
 
 " Set textwidth in text files only
 autocmd FileType text setlocal textwidth=78
+
+" Functions to extract commands to paste into Docker for running
+" tests with current client.
+function! FileTestCmd()
+    " Get full file path and extract only the part we need for tests
+    let l:test_path = matchlist(expand('%:p'), 'cedar\/api\/\(.*\)\.py')[1]
+    " Replace /'s with .'s to match test format
+    let l:test_path_string = substitute(l:test_path, '\/', '.', 'g')
+    " Mash together command that runs tests
+    let l:test_command = './manage.py test ' . l:test_path_string
+    " Dump this into system paste buffer
+    let @* = l:test_command
+endfunction
+nmap <Leader>pa :call FileTestCmd()<CR>
+
+function! FunctionTestCmd()
+    " Get full file path and extract only the part we need for tests
+    let l:test_path = matchlist(expand('%:p'), 'cedar\/api\/\(.*\)\.py')[1]
+    " Replace /'s with .'s to match test format
+    let l:test_path_string = substitute(l:test_path, '\/', '.', 'g')
+
+    " Get text line of most recent root level class definition
+    let l:class_line = getline(search('^class', 'nb'))
+    " Extract class name
+    let l:class_name = matchlist(l:class_line, '^class \(.*\)(')[1]
+
+    " Get the value of the word under the cursor, which is hopefully the
+    " function name
+    let l:function_name = expand('<cword>')
+
+    " Mash together command that runs tests
+    let l:test_command = './manage.py test ' . l:test_path_string . '.' . l:class_name . '.' . l:function_name
+
+    " Dump this into system paste buffer
+    let @* = l:test_command
+endfunction
+nmap <Leader>pc :call FunctionTestCmd()<CR>
