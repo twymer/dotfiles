@@ -8,7 +8,6 @@
       tell current session
         set name to "editor"
         write text cedardir
-        write text "vim"
       end tell
     end tell
 
@@ -17,6 +16,7 @@
       tell current session
         set name to "docker"
         write text cedardir
+        write text "cedar_exports"
         write text "docker-compose up"
       end tell
     end tell
