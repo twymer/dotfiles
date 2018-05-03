@@ -59,6 +59,11 @@ function makemessages {
   _success "makemessages command complete"
 }
 
+function makemessagesjs {
+  django-admin makemessages -d djangojs -l=es
+  _success "makemessages command complete"
+}
+
 function compilemessages {
   django-admin compilemessages
   _success "compilemessages command complete"
