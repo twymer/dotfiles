@@ -273,9 +273,11 @@ function! FunctionTestCmd()
     " Extract class name
     let l:class_name = matchlist(l:class_line, '^class \(.*\)(')[1]
 
-    " Get the value of the word under the cursor, which is hopefully the
-    " function name
-    let l:function_name = expand('<cword>')
+    " Get the value of the function name which will be most recent
+    " method name starting with test_
+    let l:function_line = getline(search('^\s*def test_', 'nb'))
+    " Extract function name
+    let l:function_name = matchlist(l:function_line, '^\s*def \(.*\)(')[1]
 
     " Mash together command that runs tests
     let l:test_command = './manage.py test ' . l:test_path_string . '.' . l:class_name . '.' . l:function_name
