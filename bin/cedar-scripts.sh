@@ -7,7 +7,7 @@ function manage_api {
 
 function fast_reset_db {
   docker-compose kill cedar-db
-  docker-compose rm cedar-db
+  docker-compose rm -f cedar-db
   docker-compose up -d cedar-db
 }
 
