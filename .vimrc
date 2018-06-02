@@ -147,11 +147,16 @@ Plug 'kana/vim-textobj-user'
 " Syntax checking
 " This requires associated syntax checkers to be
 " installed (such as flake8 for Python)
-Plug 'scrooloose/syntastic'
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_checkers = ['pylama']
+" Plug 'scrooloose/syntastic'
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_ruby_checkers = ['rubocop']
+" let g:syntastic_python_python_exec = 'python3'
+" let g:syntastic_python_checkers = ['pylama']
+Plug 'w0rp/ale'
+let g:ale_linters = {
+\   'python': ['pyflakes', 'pycodestyle'],
+\}
+let g:ale_python_pycodestyle_options = "--ignore=E501,E266"
 
 " Buffer exploring
 Plug 'vim-scripts/bufexplorer.zip'
