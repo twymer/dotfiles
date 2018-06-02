@@ -29,20 +29,10 @@ set nowritebackup
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
 
-" Kick on Vundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
 " Fix console vim colors
 set t_Co=256
 
-Plugin 'toupeira/vim-desertink'
-colorscheme desertink
-Plugin 'altercation/vim-colors-solarized'
-let g:solarized_termcolors=256
-
+" TODO move this stuff?
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 " Tabs settings
@@ -65,6 +55,9 @@ set list listchars=tab:»·,trail:·
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 set wildignore=*.pyc
+
+" Set textwidth in text files only
+autocmd FileType text setlocal textwidth=78
 
 """""""""""""""""""""""""""""""""""""""
 " General key mappings
@@ -112,53 +105,59 @@ iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
 """""""""""""""""""""""""""""""""""""""
 " Plugins and their setup
 """""""""""""""""""""""""""""""""""""""
+" Initialize vim-plug
+call plug#begin('~/.vim/plugged')
 
-Plugin 'scrooloose/nerdtree'
+Plug 'toupeira/vim-desertink'
+colorscheme desertink
+Plug 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+
+Plug 'scrooloose/nerdtree'
 let NERDTreeHijackNetrw = 0
 nmap <leader>g :NERDTreeToggle<CR>
 nmap <leader>G :NERDTreeFind<CR>
 
-
 " <3 Tim Pope <3
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-projectionist'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-projectionist'
 
 " ZoomWin to temporarily maximize a split
-Plugin 'vim-scripts/ZoomWin'
+Plug 'vim-scripts/ZoomWin'
 map <leader>z :ZoomWin<CR>
 
 " Text object selection for ruby blocks
-Plugin 'nelstrom/vim-textobj-rubyblock'
+Plug 'nelstrom/vim-textobj-rubyblock'
 " Required for rubyblock text objects
-Plugin 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-user'
 
 " Syntax checking
 " This requires associated syntax checkers to be
 " installed (such as flake8 for Python)
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers = ['pylama']
 
 " Buffer exploring
-Plugin 'vim-scripts/bufexplorer.zip'
+Plug 'vim-scripts/bufexplorer.zip'
 noremap <leader>e :BufExplorerHorizontalSplit<CR>
 
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 nnoremap <leader>b :<C-U>CtrlPBuffer<CR>
 nnoremap <leader>t :<C-U>CtrlP<CR>
 nnoremap <leader>T :<C-U>CtrlPTag<CR>
@@ -172,28 +171,28 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 let g:ctrlp_switch_buffer = 0
 
 " Undo tree
-Plugin 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 map <leader>h :GundoToggle<CR>
 
 " AG for search
-Plugin 'rking/ag.vim'
+Plug 'rking/ag.vim'
 nmap g/ :Ag!<space>
 nmap g* :Ag! -w <C-R><C-W><space>
 nmap ga :AgAdd!<space>
 nmap gq :ccl<CR>
 nmap gl :cwindow<CR>
 " Install ack as well due to --type being helpful
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 " Tagbar for navigation by tags using CTags
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 let g:tagbar_autofocus = 1
 map <leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <leader>. :TagbarToggle<CR>
 
 " Lightweight status bar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Don't also show default mode indicators
 set noshowmode
 " Show buffers bar if only one tab is open
@@ -203,7 +202,7 @@ let g:airline_section_y = ''
 let g:airline#extensions#branch#displayed_head_limit = 15
 
 " Install tabular and set up common tabulated shortcuts
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 function! CustomTabularPatterns()
     if exists('g:tabular_loaded')
         AddTabularPattern! symbols         / :/l0
@@ -218,13 +217,13 @@ endfunction
 autocmd VimEnter * call CustomTabularPatterns()
 
 " Show git info in gutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Change default (4s) to show updates quickly
 set updatetime=100
 
 " Rspec
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-dispatch'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-dispatch'
 let g:rspec_command = "Dispatch bundle exec rspec --format=progress --no-profile {spec}"
 nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
 nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
@@ -232,22 +231,21 @@ nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
 nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
 
 " Javascript
-Plugin 'othree/yajs.vim'
+Plug 'othree/yajs.vim'
 
 " React/JSX
-Plugin 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Elixir
-Plugin 'elixir-editors/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 
-" Has to be called before any plugin commands
-call vundle#end()
-filetype plugin indent on
+" Initialize plugin system
+call plug#end()
 
-" Set textwidth in text files only
-autocmd FileType text setlocal textwidth=78
-
+"""""""""""""""""""""""""""""""""""""""
+" Custom scripts
+"""""""""""""""""""""""""""""""""""""""
 " Functions to extract commands to paste into Docker for running
 " tests with current client.
 function! FileTestCmd()

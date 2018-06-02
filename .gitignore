@@ -1,3 +1,4 @@
 .zsh/functions/zsh_recompile.zsh.zwc
 .vim/bundle
+.vim/plugged
 .vim/.netrwhist
