@@ -89,3 +89,8 @@ source ~/dotfiles/bin/cedar-scripts.sh
 
 # Fix word and start/end of line jumps in tmux
 bindkey -e
+
+# This attaches an existing tmux session for the current directory
+# if it exists, otherwise it starts a new one.
+# Souce: https://github.com/adamlogic/hot-tips/blob/master/tips/tmux-attach.md
+alias ta='tmux attach -t ${PWD##*/} || tmux new -s ${PWD##*/}'
