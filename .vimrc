@@ -41,6 +41,7 @@ augroup filetypes
     autocmd!
     autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber,slim set ai sw=2 sts=2 et
     autocmd FileType python,c,cpp,tex,htmldjango set sw=4 sts=4 et
+    autocmd FileType go set sts=0 sw=4 ts=4 noet nolist
 augroup END
 
 " Store temp files elsewhere
@@ -244,6 +245,9 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Elixir
 Plug 'elixir-editors/vim-elixir'
+
+" Golang
+Plug 'fatih/vim-go'
 
 " Initialize plugin system
 call plug#end()
