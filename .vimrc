@@ -110,9 +110,9 @@ iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
 call plug#begin('~/.vim/plugged')
 
 Plug 'toupeira/vim-desertink'
-colorscheme desertink
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
+Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'scrooloose/nerdtree'
 let NERDTreeHijackNetrw = 0
@@ -255,6 +255,8 @@ Plug 'junegunn/limelight.vim'
 
 " Initialize plugin system
 call plug#end()
+
+colorscheme PaperColor
 
 """""""""""""""""""""""""""""""""""""""
 " Custom scripts
