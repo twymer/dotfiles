@@ -249,6 +249,10 @@ Plug 'elixir-editors/vim-elixir'
 " Golang
 Plug 'fatih/vim-go'
 
+" For writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
 " Initialize plugin system
 call plug#end()
 
