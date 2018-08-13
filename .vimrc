@@ -252,6 +252,8 @@ Plug 'fatih/vim-go'
 " For writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+nmap <Leader>w1 :Goyo<CR>
+nmap <Leader>w2 :Limelight!!<CR>
 
 " Initialize plugin system
 call plug#end()
