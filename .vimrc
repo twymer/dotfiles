@@ -301,3 +301,6 @@ function! FunctionTestCmd()
     let @* = l:test_command
 endfunction
 nmap <Leader>pc :call FunctionTestCmd()<CR>
+nnoremap zs :set foldmethod=syntax<CR>
+nnoremap zw :set foldmethod=indent<CR>
+
