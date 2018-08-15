@@ -1,8 +1,0 @@
-project_name: ils
-project_root: ~/code/dimagi/logistics
-pre: pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
-tabs:
-  - work: vim
-  - server: workon ils && ./manage.py runserver
-  - celery: workon ils && ./manage.py celeryd
-  - couch: couchdb
