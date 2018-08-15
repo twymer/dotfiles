@@ -90,6 +90,9 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" Yank to system clipboard
+map <leader>y "*y
+
 """""""""""""""""""""""""""""""""""""""
 " Text expands
 """""""""""""""""""""""""""""""""""""""
@@ -113,6 +116,7 @@ Plug 'toupeira/vim-desertink'
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 Plug 'NLKNguyen/papercolor-theme'
+set background=dark
 
 Plug 'scrooloose/nerdtree'
 let NERDTreeHijackNetrw = 0
@@ -301,6 +305,10 @@ function! FunctionTestCmd()
     let @* = l:test_command
 endfunction
 nmap <Leader>pc :call FunctionTestCmd()<CR>
+
+" Fix incorrect background coloring in Kitty
+let &t_ut=''
+
 nnoremap zs :set foldmethod=syntax<CR>
 nnoremap zw :set foldmethod=indent<CR>
 
