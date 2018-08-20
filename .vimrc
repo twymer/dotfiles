@@ -253,6 +253,10 @@ Plug 'elixir-editors/vim-elixir'
 " Golang
 Plug 'fatih/vim-go'
 
+" Python
+Plug 'davidhalter/jedi-vim'
+let g:jedi#popup_on_dot = 0
+
 " For writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
