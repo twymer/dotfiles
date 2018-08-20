@@ -1,4 +1,4 @@
-set guifont=Consolas:h14
+set guifont=Monaco:h12
 
 " Hide the toolbar
 set go-=T
