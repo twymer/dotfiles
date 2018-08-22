@@ -256,6 +256,7 @@ Plug 'fatih/vim-go'
 " Python
 Plug 'davidhalter/jedi-vim'
 let g:jedi#popup_on_dot = 0
+let g:jedi#goto_assignments_command = "<leader>j"
 
 " For writing
 Plug 'junegunn/goyo.vim'
