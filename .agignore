@@ -1,6 +1,7 @@
 *.min.js*
 node_modules/
 db/markdown/
+vendor/bundle
 tags
 provider.bundle.js
 *.svg
