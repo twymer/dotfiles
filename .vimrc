@@ -162,6 +162,12 @@ let g:ale_linters = {
 \   'python': ['pyflakes', 'pycodestyle'],
 \}
 let g:ale_python_pycodestyle_options = "--ignore=E501,E266"
+function! DisableAleTextChangeLinting()
+    let g:ale_lint_on_text_changed = 'never'
+    ALEDisable
+    ALEEnable
+endfunction
+command! DisableAleChangeLinting call DisableAleTextChangeLinting()
 
 " Buffer exploring
 Plug 'vim-scripts/bufexplorer.zip'
@@ -257,6 +263,7 @@ Plug 'fatih/vim-go'
 Plug 'davidhalter/jedi-vim'
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>j"
+let g:jedi#smart_auto_mappings = 0
 
 " For writing
 Plug 'junegunn/goyo.vim'
