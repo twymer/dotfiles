@@ -187,8 +187,8 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 let g:ctrlp_switch_buffer = 0
 
 " Undo tree
-Plug 'sjl/gundo.vim'
-map <leader>h :GundoToggle<CR>
+Plug 'mbbill/undotree'
+map <leader>h ::UndotreeToggle<CR>
 
 " AG for search
 Plug 'rking/ag.vim'
