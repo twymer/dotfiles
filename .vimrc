@@ -112,11 +112,14 @@ iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'toupeira/vim-desertink'
+Plug 'morhetz/gruvbox'
+
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
-Plug 'NLKNguyen/papercolor-theme'
-set background=dark
+" Required for Solarized to look ok
+syntax enable
 
 Plug 'scrooloose/nerdtree'
 let NERDTreeHijackNetrw = 0
