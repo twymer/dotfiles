@@ -229,9 +229,10 @@ endfunction
 autocmd VimEnter * call CustomTabularPatterns()
 
 " Show git info in gutter
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 " Change default (4s) to show updates quickly
-set updatetime=100
+" set updatetime=100
+Plug 'mhinz/vim-signify'
 
 " Rspec
 Plug 'thoughtbot/vim-rspec'
