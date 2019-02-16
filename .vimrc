@@ -176,18 +176,11 @@ command! DisableAleChangeLinting call DisableAleTextChangeLinting()
 Plug 'vim-scripts/bufexplorer.zip'
 noremap <leader>e :BufExplorerHorizontalSplit<CR>
 
-Plug 'ctrlpvim/ctrlp.vim'
-nnoremap <leader>b :<C-U>CtrlPBuffer<CR>
-nnoremap <leader>t :<C-U>CtrlP<CR>
-nnoremap <leader>T :<C-U>CtrlPTag<CR>
-" Toggle working path mode (important for submodules)
-map <leader>p :let g:ctrlp_working_path_mode = 'a'<cr>
-map <leader>P :let g:ctrlp_working_path_mode = 'ra'<cr>
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-" Respect the .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-" Don't jump to open buffers in other tabs
-let g:ctrlp_switch_buffer = 0
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+nnoremap <leader>t :GFiles<cr>
+nnoremap <leader>T :Files<cr>
+nnoremap <Leader>b :Buffers<cr>
 
 " Undo tree
 Plug 'mbbill/undotree'
