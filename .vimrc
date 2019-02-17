@@ -178,6 +178,22 @@ noremap <leader>e :BufExplorerHorizontalSplit<CR>
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+" Respect colorscheme colors
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
+
 nnoremap <leader>t :GFiles<cr>
 nnoremap <leader>T :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
