@@ -8,3 +8,4 @@ provider.bundle.js
 cpt_code_mappings
 yarn.lock
 api/static/css
+api/api_app/static/css
