@@ -41,6 +41,8 @@
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
   re = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(objectname:short) (%(authorname)) %(refname:short)'
+  noop = commit --amend --no-edit
+  noop-push = !git noop && git push -f
 
 [core]
   excludesfile = ~/.gitignore_global
