@@ -2,13 +2,20 @@ function manage_api {
   # Pass anything called after `manage_api` along to manage.py.
   # Example:
   # $ manage_api nukedb
-  docker-compose run cedar-api ./manage.py "$@"
+  docker-compose exec web ./manage.py "$@"
 }
 
 function fast_reset_db {
-  docker-compose kill cedar-db
-  docker-compose rm -f cedar-db
-  docker-compose up -d cedar-db
+  docker-compose kill db
+  docker-compose rm -f db
+  docker-compose up -d db
+}
+
+function fast_reset_seed_all {
+  fast_reset_db
+  _migrate
+  _seed
+  _success "Cedar DB is reset and seeded"
 }
 
 function fast_reset_seed {
@@ -30,12 +37,12 @@ function reset_db_full {
 }
 
 function restart_channels {
-  docker-compose exec cedar-worker-channels bash -c "supervisorctl restart channels-worker"
-  docker-compose exec cedar-worker-celery bash -c "supervisorctl restart celery-worker"
+  docker-compose exec channels bash -c "supervisorctl restart channels-worker"
+  docker-compose exec celery bash -c "supervisorctl restart celery-worker"
 }
 
 function restart_supervisor {
-  docker-compose exec cedar-api bash -c "supervisorctl restart all"
+  docker-compose exec web bash -c "supervisorctl restart all"
 }
 
 function restart {
@@ -51,6 +58,8 @@ function _success {
 function cedar_exports {
   export CEDAR_SERVICES_ACTIVE=true
   export HOSTNAME=`hostname`
+  export IN_UI_TESTING=true
+  export SSH_HOME=~
   export AWS_CREDENTIAL_HOME=~
 }
 
@@ -76,18 +85,32 @@ function _reset {
 }
 
 function _seed {
-  docker-compose run cedar-api ./manage.py loaddata automated_ui_tests.json
-  # docker-compose run cedar-api ./manage.py shell < /usr/local/cedar/api/api_app/scripts/create-automated-ui-test-patients.py
+  docker-compose exec web ./manage.py loaddata api_app/fixtures/initial.json
+  docker-compose exec web ./manage.py loaddata automated_ui_tests.json
+  docker-compose exec web ./manage.py shell < /usr/local/cedar/api/api_app/scripts/create-automated-ui-test-patients.py
 }
 
 function _nukedb {
-  docker-compose run cedar-api ./manage.py nukedb
+  docker-compose exec web ./manage.py nukedb
 }
 
 function _migrate {
-  docker-compose run cedar-api ./manage.py migrate
+  docker-compose exec web ./manage.py migrate
 }
 
 function _fixtures {
-  docker-compose run cedar-api ./manage.py loaddata api_app/fixtures/initial.json
+  docker-compose exec web ./manage.py loaddata api_app/fixtures/initial.json
+}
+
+function fix_conflicts {
+  git checkout master
+  git pull
+  git checkout -
+  git merge master
+  cd api
+  ./fixmigrations.py
+  cd ..
+  git checkout --theirs api/.migration_state
+  fast_reset_seed
+  git status
 }
