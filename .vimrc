@@ -61,6 +61,13 @@ set wildignore=*.pyc
 autocmd FileType text setlocal textwidth=78
 
 """""""""""""""""""""""""""""""""""""""
+" MacVim specific settings
+"""""""""""""""""""""""""""""""""""""""
+if has('gui_running')
+    set guifont=Monaco:h12
+endif
+
+"""""""""""""""""""""""""""""""""""""""
 " General key mappings
 """""""""""""""""""""""""""""""""""""""
 " Clear search highlights
