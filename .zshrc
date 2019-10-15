@@ -83,13 +83,6 @@ alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby\nvendor/cache' >> .gitignore"
 
-# Cedar aliases
-alias startcedar="sh ~/dotfiles/bin/start-cedar.sh"
-source ~/dotfiles/bin/cedar-scripts.sh
-
-# TM aliases
-source ~/dotfiles/bin/tm-scripts.sh
-
 # Fix word and start/end of line jumps in tmux
 bindkey -e
 

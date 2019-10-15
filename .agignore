@@ -3,9 +3,5 @@ node_modules/
 db/markdown/
 vendor/bundle
 tags
-provider.bundle.js
 *.svg
-cpt_code_mappings
 yarn.lock
-api/static/css
-api/api_app/static/css
