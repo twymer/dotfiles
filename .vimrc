@@ -112,6 +112,7 @@ iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval
 iabbrev ppdb import pdb; pdb.set_trace()
 iabbrev ipdb import ipdb; ipdb.set_trace()
 iabbrev rrdb from celery.contrib import rdb; rdb.set_trace()
+iabbrev %debug% <pre> {% filter force_escape %} {% debug %} {% endfilter %} </pre>
 
 """""""""""""""""""""""""""""""""""""""
 " Plugins and their setup
