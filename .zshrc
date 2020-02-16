@@ -89,3 +89,6 @@ bindkey -e
 # if it exists, otherwise it starts a new one.
 # Souce: https://github.com/adamlogic/hot-tips/blob/master/tips/tmux-attach.md
 alias ta='tmux attach -t ${PWD##*/} || tmux new -s ${PWD##*/}'
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/node@10/bin:$PATH"
