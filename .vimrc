@@ -279,7 +279,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 Plug 'elixir-editors/vim-elixir'
 
 " Golang
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 
 " Python
 Plug 'davidhalter/jedi-vim'
