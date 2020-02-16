@@ -40,7 +40,6 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
 eval "$(rbenv init -)"
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 # Set editor mode for tmuxinator
 export EDITOR=vim
