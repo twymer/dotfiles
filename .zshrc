@@ -92,6 +92,3 @@ alias ta='tmux attach -t ${PWD##*/} || tmux new -s ${PWD##*/}'
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
-
-# Enable Postgres.app CLI tools
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
