@@ -92,3 +92,5 @@ alias ta='tmux attach -t ${PWD##*/} || tmux new -s ${PWD##*/}'
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

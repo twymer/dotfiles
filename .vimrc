@@ -186,6 +186,8 @@ noremap <leader>e :BufExplorerHorizontalSplit<CR>
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+nmap g/ :Ag<space>
+nmap g* :Ag <C-R><C-W><space>
 " Respect colorscheme colors
 let g:fzf_colors =
             \ { 'fg':      ['fg', 'Normal'],
@@ -209,16 +211,6 @@ nnoremap <Leader>b :Buffers<cr>
 " Undo tree
 Plug 'mbbill/undotree'
 map <leader>h ::UndotreeToggle<CR>
-
-" AG for search
-Plug 'rking/ag.vim'
-nmap g/ :Ag!<space>
-nmap g* :Ag! -w <C-R><C-W><space>
-nmap ga :AgAdd!<space>
-nmap gq :ccl<CR>
-nmap gl :cwindow<CR>
-" Install ack as well due to --type being helpful
-Plug 'mileszs/ack.vim'
 
 " Tagbar for navigation by tags using CTags
 Plug 'majutsushi/tagbar'
