@@ -187,7 +187,7 @@ noremap <leader>e :BufExplorerHorizontalSplit<CR>
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 nmap g/ :Ag<space>
-nmap g* :Ag <C-R><C-W><space>
+nmap g* :Ag <C-R><C-W>
 " Respect colorscheme colors
 let g:fzf_colors =
             \ { 'fg':      ['fg', 'Normal'],
