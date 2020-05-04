@@ -16,4 +16,4 @@ ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -s ~/dotfiles/.agignore ~/.agignore
 ln -s ~/.vimrc ~/.nvimrc
 ln -s ~/.vim ~/.nvim
-chsh -s /bin/zsh
+# chsh -s /bin/zsh
