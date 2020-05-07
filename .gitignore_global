@@ -6,3 +6,5 @@ db.dump
 dump.rdb
 
 awscli-bundle*
+
+docker-compose.override.yml
