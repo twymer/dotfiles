@@ -186,8 +186,8 @@ noremap <leader>e :BufExplorerHorizontalSplit<CR>
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-nmap g/ :Ag<space>
-nmap g* :Ag <C-R><C-W>
+nmap g/ :Rg<space>
+nmap g* :Rg <C-R><C-W>
 
 nnoremap <leader>t :GFiles<cr>
 nnoremap <leader>T :Files<cr>
