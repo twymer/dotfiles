@@ -45,7 +45,7 @@
   noop-push = !git noop && git push -f
 
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/tyler/.gitignore_global
   editor = /usr/bin/vim
 
 [push]
