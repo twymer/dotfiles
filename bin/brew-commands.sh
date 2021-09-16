@@ -11,4 +11,4 @@ brew install python
 brew install reattach-to-user-namespace
 brew install rbenv ruby-build
 brew install heroku
-brew cask install keepingyouawake
+brew install --cask keepingyouawake
