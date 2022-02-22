@@ -39,7 +39,7 @@ alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
 
 # Set editor mode for tmuxinator
 export EDITOR=vim
@@ -95,3 +95,4 @@ export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="/usr/local/bin/python3:${PATH}"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
