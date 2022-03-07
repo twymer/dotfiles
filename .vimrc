@@ -160,25 +160,33 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 " Required for rubyblock text objects
 Plug 'kana/vim-textobj-user'
 
-" Syntax checking
-" This requires associated syntax checkers to be
-" installed (such as flake8 for Python)
-" Plug 'scrooloose/syntastic'
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_ruby_checkers = ['rubocop']
-" let g:syntastic_python_python_exec = 'python3'
-" let g:syntastic_python_checkers = ['pylama']
-Plug 'w0rp/ale'
-let g:ale_linters = {
-\   'python': ['pyflakes', 'pycodestyle'],
-\}
-let g:ale_python_pycodestyle_options = "--ignore=E501,E266"
-function! DisableAleTextChangeLinting()
-    let g:ale_lint_on_text_changed = 'never'
-    ALEDisable
-    ALEEnable
-endfunction
-command! DisableAleChangeLinting call DisableAleTextChangeLinting()
+" Syntax checking and language server (CoC)
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+\ 'coc-tsserver',
+\ 'coc-solargraph'
+\ ]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
+" https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
+nmap <silent> fd <Plug>(coc-definition)
+nmap <silent> fy <Plug>(coc-type-definition)
+nmap <silent> fr <Plug>(coc-references)
+
+nmap <leader>fn <Plug>(coc-rename)
+
+nmap <leader>do <Plug>(coc-codeaction)
+
+nmap <silent> [f <Plug>(coc-diagnostic-prev)
+nmap <silent> ]f <Plug>(coc-diagnostic-next)
 
 " Buffer exploring
 Plug 'vim-scripts/bufexplorer.zip'
@@ -249,8 +257,13 @@ nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
 Plug 'othree/yajs.vim'
 
 " React/JSX
-Plug 'mxw/vim-jsx'
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+" Plug 'mxw/vim-jsx'
+" let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 
 " Elixir
 Plug 'elixir-editors/vim-elixir'
