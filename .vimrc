@@ -150,6 +150,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-obsession'
 
 " ZoomWin to temporarily maximize a split
 Plug 'vim-scripts/ZoomWin'
