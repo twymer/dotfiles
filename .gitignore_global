@@ -8,3 +8,5 @@ dump.rdb
 awscli-bundle*
 
 docker-compose.override.yml
+
+Session.vim
