@@ -186,8 +186,8 @@ nmap <leader>fn <Plug>(coc-rename)
 
 nmap <leader>do <Plug>(coc-codeaction)
 
-nmap <silent> [f <Plug>(coc-diagnostic-prev)
-nmap <silent> ]f <Plug>(coc-diagnostic-next)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Buffer exploring
 Plug 'vim-scripts/bufexplorer.zip'
