@@ -210,11 +210,7 @@ nmap g* :Rg <C-R><C-W>
 " https://github.com/junegunn/fzf.vim/issues/741
 " https://github.com/junegunn/fzf.vim#advanced-customization
 command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
-nmap h/ :Rag<space>
-nmap h* :Rag <C-R><C-W>
 command! -bang -nargs=* Rrg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " . <q-args>, 1, fzf#vim#with_preview(), <bang>0)
-nmap f/ :Rrg<space>
-nmap f* :Rrg <C-R><C-W>
 
 nnoremap <leader>t :GFiles<cr>
 nnoremap <leader>T :Files<cr>
