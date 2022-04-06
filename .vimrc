@@ -198,6 +198,24 @@ Plug 'junegunn/fzf.vim'
 nmap g/ :Rg<space>
 nmap g* :Rg <C-R><C-W>
 
+" By default fzf :Ag and :Rg commands surround what you pass to them with
+" quotes and escape the strings. I want to be able to pass directory
+" information to these commands so had to dig through issues and advanced
+" customization documentation to piece together some commands. 
+"
+" As of initial commit time, I trust the Ag command more than the Rg one but
+" highlighting works better with Rg.
+"
+" https://github.com/junegunn/fzf.vim/issues/413
+" https://github.com/junegunn/fzf.vim/issues/741
+" https://github.com/junegunn/fzf.vim#advanced-customization
+command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+nmap h/ :Rag<space>
+nmap h* :Rag <C-R><C-W>
+command! -bang -nargs=* Rrg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " . <q-args>, 1, fzf#vim#with_preview(), <bang>0)
+nmap f/ :Rrg<space>
+nmap f* :Rrg <C-R><C-W>
+
 nnoremap <leader>t :GFiles<cr>
 nnoremap <leader>T :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
