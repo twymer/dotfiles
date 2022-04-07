@@ -261,8 +261,12 @@ Plug 'mhinz/vim-signify'
 " Rspec
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-dispatch'
-let g:rspec_command = "bin/rspec --format=progress --no-profile {spec}"
-let g:rspec_runner = "os_x_iterm2"
+if has('gui_running')
+    let g:rspec_command = "bin/rspec --format=progress --no-profile {spec}"
+    let g:rspec_runner = "os_x_iterm2"
+else
+    let g:rspec_command = "Dispatch rspec {spec}"
+end
 nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
 nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
 nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
