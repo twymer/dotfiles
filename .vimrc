@@ -267,15 +267,16 @@ if has('gui_running')
     " If a gui is running, run in a terminal
     let g:rspec_command = "bin/rspec --format=progress --no-profile {spec}"
     let g:rspec_runner = "os_x_iterm2"
+    nmap <Leader>rf :wa<CR> :call RunCurrentSpecFile()<CR>
+    nmap <Leader>rc :wa<CR> :call RunNearestSpec()<CR>
+    nmap <Leader>rr :wa<CR> :call RunLastSpec()<CR>
 else
     " Didn't quickly figure out how to launch in a separate terminal
     " when using CLI vim but vim-dispatch is a better experience anyway
-    let g:rspec_command = "Dispatch rspec {spec}"
+    nmap <Leader>rf :Dispatch rspec %<CR>
+    nmap <Leader>rc :execute ":Dispatch rspec %:" . line(".")<CR>
+    nmap <Leader>rr :Copen\|Dispatch<CR>
 end
-nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
-nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
-nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
-nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
 
 " Javascript
 Plug 'othree/yajs.vim'
