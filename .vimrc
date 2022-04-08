@@ -170,11 +170,11 @@ let g:coc_global_extensions = [
 \ ]
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
+    let g:coc_global_extensions += ['coc-prettier']
 endif
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
+    let g:coc_global_extensions += ['coc-eslint']
 endif
 
 " https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
@@ -201,7 +201,7 @@ nmap g* :Rg <C-R><C-W>
 " By default fzf :Ag and :Rg commands surround what you pass to them with
 " quotes and escape the strings. I want to be able to pass directory
 " information to these commands so had to dig through issues and advanced
-" customization documentation to piece together some commands. 
+" customization documentation to piece together some commands.
 "
 " As of initial commit time, I trust the Ag command more than the Rg one but
 " highlighting works better with Rg.
@@ -354,4 +354,3 @@ let &t_ut=''
 
 nnoremap zs :set foldmethod=syntax<CR>
 nnoremap zw :set foldmethod=indent<CR>
-
