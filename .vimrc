@@ -1,4 +1,4 @@
-" Inspired by:
+" This config was created in 2011 and originaly inspired by:
 " https://github.com/edgecase/vim-config/
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 
@@ -25,15 +25,16 @@ set nojoinspaces    " Don't add extra spaces on line joining with punctuation
 set nobackup
 set nowritebackup
 
+" Store temp files elsewhere
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
 
 " Fix console vim colors
 set t_Co=256
-
-" TODO move this stuff?
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 " Tabs settings
 set sw=2 sts=2 et
@@ -43,10 +44,6 @@ augroup filetypes
     autocmd FileType python,c,cpp,tex,htmldjango set sw=4 sts=4 et
     autocmd FileType go set sts=0 sw=4 ts=4 noet nolist
 augroup END
-
-" Store temp files elsewhere
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Use Q for formatting instead of Ex mode
 map Q gq
@@ -120,6 +117,7 @@ iabbrev %debug% <pre> {% filter force_escape %} {% debug %} {% endfilter %} </pr
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
+" Colorscheme options even though I have been using papercolor for a long time
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'toupeira/vim-desertink'
 Plug 'morhetz/gruvbox'
@@ -137,20 +135,21 @@ nmap <leader>G :NERDTreeFind<CR>
 " <3 Tim Pope <3
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-obsession'
 
 " ZoomWin to temporarily maximize a split
 Plug 'vim-scripts/ZoomWin'
@@ -162,7 +161,6 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'kana/vim-textobj-user'
 
 " Syntax checking and language server (CoC)
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = [
 \ 'coc-tsserver',
@@ -193,6 +191,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 Plug 'vim-scripts/bufexplorer.zip'
 noremap <leader>e :BufExplorerHorizontalSplit<CR>
 
+" File/buffer search and preview via rg and ag
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 nmap g/ :Rg<space>
@@ -237,6 +236,9 @@ set noshowmode
 let g:airline_section_y = ''
 let g:airline#extensions#branch#displayed_head_limit = 15
 
+" My statusline before using airline
+" set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
 " Install tabular and set up common tabulated shortcuts
 Plug 'godlygeek/tabular'
 function! CustomTabularPatterns()
@@ -260,11 +262,13 @@ Plug 'mhinz/vim-signify'
 
 " Rspec
 Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-dispatch'
 if has('gui_running')
+    " If a gui is running, run in a terminal
     let g:rspec_command = "bin/rspec --format=progress --no-profile {spec}"
     let g:rspec_runner = "os_x_iterm2"
 else
+    " Didn't quickly figure out how to launch in a separate terminal
+    " when using CLI vim but vim-dispatch is a better experience anyway
     let g:rspec_command = "Dispatch rspec {spec}"
 end
 nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
@@ -287,15 +291,6 @@ Plug 'jparise/vim-graphql'
 " Elixir
 Plug 'elixir-editors/vim-elixir'
 
-" Golang
-" Plug 'fatih/vim-go'
-
-" Python
-Plug 'davidhalter/jedi-vim'
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>j"
-let g:jedi#smart_auto_mappings = 0
-
 " For writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -312,45 +307,42 @@ colorscheme PaperColor
 """""""""""""""""""""""""""""""""""""""
 " Functions to extract commands to paste into Docker for running
 " tests with current client.
-function! FileTestCmd()
-    " Get full file path and extract only the part we need for tests
-    let l:test_path = matchlist(expand('%:p'), 'cedar\/api\/\(.*\)\.py')[1]
-    " Replace /'s with .'s to match test format
-    let l:test_path_string = substitute(l:test_path, '\/', '.', 'g')
-    " Mash together command that runs tests
-    let l:test_command = './manage.py test ' . l:test_path_string
-    " Dump this into system paste buffer
-    let @* = l:test_command
-endfunction
-nmap <Leader>pa :call FileTestCmd()<CR>
+" function! FileTestCmd()
+"     " Get full file path and extract only the part we need for tests
+"     let l:test_path = matchlist(expand('%:p'), 'cedar\/api\/\(.*\)\.py')[1]
+"     " Replace /'s with .'s to match test format
+"     let l:test_path_string = substitute(l:test_path, '\/', '.', 'g')
+"     " Mash together command that runs tests
+"     let l:test_command = './manage.py test ' . l:test_path_string
+"     " Dump this into system paste buffer
+"     let @* = l:test_command
+" endfunction
+" nmap <Leader>pa :call FileTestCmd()<CR>
 
-function! FunctionTestCmd()
-    " Get full file path and extract only the part we need for tests
-    let l:test_path = matchlist(expand('%:p'), 'cedar\/api\/\(.*\)\.py')[1]
-    " Replace /'s with .'s to match test format
-    let l:test_path_string = substitute(l:test_path, '\/', '.', 'g')
+" function! FunctionTestCmd()
+"     " Get full file path and extract only the part we need for tests
+"     let l:test_path = matchlist(expand('%:p'), 'cedar\/api\/\(.*\)\.py')[1]
+"     " Replace /'s with .'s to match test format
+"     let l:test_path_string = substitute(l:test_path, '\/', '.', 'g')
 
-    " Get text line of most recent root level class definition
-    let l:class_line = getline(search('^class', 'nb'))
-    " Extract class name
-    let l:class_name = matchlist(l:class_line, '^class \(.*\)(')[1]
+"     " Get text line of most recent root level class definition
+"     let l:class_line = getline(search('^class', 'nb'))
+"     " Extract class name
+"     let l:class_name = matchlist(l:class_line, '^class \(.*\)(')[1]
 
-    " Get the value of the function name which will be most recent
-    " method name starting with test_
-    let l:function_line = getline(search('^\s*def test_', 'nb'))
-    " Extract function name
-    let l:function_name = matchlist(l:function_line, '^\s*def \(.*\)(')[1]
+"     " Get the value of the function name which will be most recent
+"     " method name starting with test_
+"     let l:function_line = getline(search('^\s*def test_', 'nb'))
+"     " Extract function name
+"     let l:function_name = matchlist(l:function_line, '^\s*def \(.*\)(')[1]
 
-    " Mash together command that runs tests
-    let l:test_command = './manage.py test ' . l:test_path_string . '.' . l:class_name . '.' . l:function_name
+"     " Mash together command that runs tests
+"     let l:test_command = './manage.py test ' . l:test_path_string . '.' . l:class_name . '.' . l:function_name
 
-    " Dump this into system paste buffer
-    let @* = l:test_command
-endfunction
-nmap <Leader>pc :call FunctionTestCmd()<CR>
-
-" Fix incorrect background coloring in Kitty
-let &t_ut=''
+"     " Dump this into system paste buffer
+"     let @* = l:test_command
+" endfunction
+" nmap <Leader>pc :call FunctionTestCmd()<CR>
 
 nnoremap zs :set foldmethod=syntax<CR>
 nnoremap zw :set foldmethod=indent<CR>
