@@ -274,7 +274,7 @@ else
     " Didn't quickly figure out how to launch in a separate terminal
     " when using CLI vim but vim-dispatch is a better experience anyway
     nmap <Leader>rf :Dispatch rspec %<CR>
-    nmap <Leader>rc :execute ":Dispatch rspec %:" . line(".")<CR>
+    nmap <Leader>rc :execute ":Dispatch rspec %\\:" . line(".")<CR>
     nmap <Leader>rr :Copen\|Dispatch<CR>
 end
 
