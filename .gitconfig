@@ -40,7 +40,7 @@
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-  re = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(objectname:short) (%(authorname)) %(refname:short)'
+  re = for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(objectname:short) (%(authorname)) %(refname:short)'
   noop = commit --amend --no-edit
   noop-push = !git noop && git push -f
 
