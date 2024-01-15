@@ -96,3 +96,5 @@ export PATH="/usr/local/bin/python3:${PATH}"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
+
+alias branches='$HOME/dotfiles/bin/better-git-branch.sh'
