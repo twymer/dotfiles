@@ -116,9 +116,10 @@ iabbrev %debug% <pre> {% filter force_escape %} {% debug %} {% endfilter %} </pr
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
-" Colorscheme options even though I have been using papercolor for a long time
+" Colorscheme options even though I don't really change this
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'toupeira/vim-desertink'
+Plug 'romainl/Apprentice'
 Plug 'morhetz/gruvbox'
 
 Plug 'altercation/vim-colors-solarized'
@@ -280,7 +281,7 @@ else
     " Didn't quickly figure out how to launch in a separate terminal
     " when using CLI vim but vim-dispatch is a better experience anyway
     nmap <Leader>rf :Dispatch rspec %<CR>
-    nmap <Leader>rc :execute ":Dispatch rspec %\\:" . line(".")<CR>
+    nmap <Leader>rc :execute ":Dispatch bin/rspec %\\:" . line(".")<CR>
     nmap <Leader>rr :Copen\|Dispatch<CR>
 end
 
@@ -308,7 +309,8 @@ nmap <Leader>w2 :Limelight!!<CR>
 " Initialize plugin system
 call plug#end()
 
-colorscheme PaperColor
+colorscheme desertink
+" let g:airline_theme='gruvbox'
 
 """""""""""""""""""""""""""""""""""""""
 " Custom scripts
