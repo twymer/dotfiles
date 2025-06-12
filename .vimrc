@@ -356,3 +356,43 @@ colorscheme desertink
 
 nnoremap zs :set foldmethod=syntax<CR>
 nnoremap zw :set foldmethod=indent<CR>
+
+" Vim helpers for Claude Code references (written by Claude Code!)
+" <leader>al -- Copy path of line with line number
+" <leader>as -- Copy path of visual selection with line number range
+
+function! CopyLineForClaude()
+  let filename = expand('%:.')
+  let linenumber = line('.')
+  let codesnippet = getline('.')
+  let formatted = filename . ':' . linenumber . "\n```\n" . codesnippet . "\n```"
+  let @+ = formatted
+  let @* = formatted
+  echo 'Copied: ' . filename . ':' . linenumber
+endfunction
+
+function! CopySelectionForClaude() range
+  let filename = expand('%:.')
+  let start_line = a:firstline
+  let end_line = a:lastline
+
+  " Get all lines in the selection
+  let lines = getline(start_line, end_line)
+  let codesnippet = join(lines, "\n")
+
+  " Format with line range
+  if start_line == end_line
+    let line_info = start_line
+  else
+    let line_info = start_line . '-' . end_line
+  endif
+
+  let formatted = filename . ':' . line_info . "\n```\n" . codesnippet . "\n```"
+  let @+ = formatted
+  let @* = formatted
+  echo 'Copied: ' . filename . ':' . line_info . ' (' . len(lines) . ' lines)'
+endfunction
+
+
+nnoremap <leader>al :call CopyLineForClaude()<CR>
+vnoremap <leader>as :call CopySelectionForClaude()<CR>
