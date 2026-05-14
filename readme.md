@@ -17,6 +17,17 @@ If you only want to use some of the files, then manually symlink them. An exampl
 
     ln -s ~/dotfiles/.vimrc ~/.vimrc
 
+Claude Code
+-----------
+
+Global Claude Code configuration lives under `.claude/`:
+
+- `settings.json` — enabled plugins and known marketplaces. Hooks are intentionally not tracked.
+- `CLAUDE.md` — global instructions that should apply across every working directory.
+- `skills/` — individual user-level skills. Only specific skills are symlinked; the directory itself is unmanaged so per-machine skills (e.g. plugin-installed or experimental ones) can coexist.
+
+`install.sh` symlinks these into `~/.claude/`. Nothing else under `~/.claude/` is tracked here — conversation transcripts, per-project memory, plugin caches, and session state stay machine-local.
+
 Misc setup files
 ----------------
 

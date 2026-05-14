@@ -1,0 +1,20 @@
+{
+  "enabledPlugins": {
+    "pr@sureadhere": true,
+    "jira-to-pr@sureadhere": true,
+    "commit@sureadhere": true,
+    "estimate@sureadhere": true,
+    "scoping-plan@sureadhere": true,
+    "superpowers@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "sureadhere": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/sureadhere/claude-code.git"
+      }
+    }
+  }
+}

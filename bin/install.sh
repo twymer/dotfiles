@@ -16,4 +16,8 @@ ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -s ~/dotfiles/.agignore ~/.agignore
 ln -s ~/.vimrc ~/.nvimrc
 ln -s ~/.vim ~/.nvim
+ln -s ~/dotfiles/.claude/settings.json ~/.claude/settings.json
+ln -s ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s ~/dotfiles/.claude/skills/code-review-changes ~/.claude/skills/code-review-changes
+ln -s ~/dotfiles/.claude/skills/pr-review-agents ~/.claude/skills/pr-review-agents
 # chsh -s /bin/zsh
